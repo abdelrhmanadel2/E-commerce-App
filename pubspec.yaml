@@ -37,10 +37,12 @@ dependencies:
   image_picker: ^0.8.4
   device_preview: ^0.7.4
   get_storage: ^2.0.3
-
+  dio: ^4.0.0
+  pretty_dio_logger: ^1.2.0-beta-1
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  lint: ^1.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

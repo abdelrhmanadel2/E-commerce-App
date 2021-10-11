@@ -1,8 +1,11 @@
 import 'package:ecommerce_app/services/theme_service.dart';
+import 'package:ecommerce_app/utils/services/localization_service.dart';
 import 'package:ecommerce_app/utils/styles.dart';
+import 'package:ecommerce_app/utils/translation/app_translation.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ecommerce_app/utils/translation_key.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -23,13 +26,20 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-      body: Center(
-        child: ElevatedButton(
-          child: Text(
-            'Change Theme',
+      body: Column(
+        children: [
+          Icon(Icons.add_a_photo_sharp),
+          Center(
+            child: ElevatedButton(
+              child: Text(
+                changeLanguage.tr,
+              ),
+              onPressed: () {
+                Get.find<LocalizationService>().toggleLocale();
+              },
+            ),
           ),
-          onPressed: () {},
-        ),
+        ],
       ),
     );
   }

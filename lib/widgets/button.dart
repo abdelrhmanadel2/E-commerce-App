@@ -12,28 +12,28 @@ class RoundedCornerButton extends StatelessWidget {
     this.hasBorder = false,
     // ignore: avoid_init_to_null
     this.icon = null,
-    this.width,
-    this.widthOfText,
-    this.heightOfText,
-    this.height,
+    this.width=0.0 ,
+    this.widthOfText=0.0,
+    this.heightOfText=0.0,
+    this.height=0.0,
     this.textStyle,
   }) : super(key: key);
-  final widthOfText;
-  final heightOfText;
+  final double widthOfText;
+  final double heightOfText;
   final String title;
   final VoidCallback? onPressed;
   final bool hasShadow;
-  final backgroundColor;
-  final textColor;
+  final Color backgroundColor;
+  final Color textColor;
   final icon;
   final bool hasBorder;
-  final width;
-  final height;
+  final double width;
+  final double height;
   final TextStyle? textStyle;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width,
+      width: width ,
       height: height,
       decoration: BoxDecoration(
           color: backgroundColor,
