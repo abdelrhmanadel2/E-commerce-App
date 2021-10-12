@@ -14,6 +14,7 @@ void main() {
   Get.putAsync(() => StorageService.init(), permanent: true);
   Get.put(LocalizationService.init(), permanent: true);
   GetStorage.init();
+
   runApp(MyApp());
 }
 

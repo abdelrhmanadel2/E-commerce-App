@@ -47,7 +47,7 @@ class RoundedCornerButton extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.2),
                     spreadRadius: 2,
                     blurRadius: 3,
-                    offset: Offset(0, 2), // changes position of shadow
+                    offset:const Offset(0, 2), // changes position of shadow
                   )
                 ]
               : null),
@@ -65,7 +65,7 @@ class RoundedCornerButton extends StatelessWidget {
                 child: Row(
                   children: [
                     icon,
-                    Text("$title",
+                    Text(title,
                         textAlign: TextAlign.center,
                         style: textStyle ??
                             TextStyle(
@@ -77,7 +77,7 @@ class RoundedCornerButton extends StatelessWidget {
                 ),
               )
             : Text(
-                "$title",
+                title,
                 textAlign: TextAlign.center,
                 style: TextStyle(color: textColor, fontSize: 13),
               ),

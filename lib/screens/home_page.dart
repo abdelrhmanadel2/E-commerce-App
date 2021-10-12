@@ -1,7 +1,6 @@
 import 'package:ecommerce_app/services/theme_service.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
 import 'package:ecommerce_app/utils/styles.dart';
-import 'package:ecommerce_app/utils/translation/app_translation.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,23 +19,24 @@ class HomePage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon:
-                Get.isDarkMode ? Icon(Icons.light_mode) : Icon(Icons.dark_mode),
+            icon: Get.isDarkMode
+                ? const Icon(Icons.light_mode)
+                : const Icon(Icons.dark_mode),
             onPressed: ThemeService().switchTheme,
           )
         ],
       ),
       body: Column(
         children: [
-          Icon(Icons.add_a_photo_sharp),
+          const Icon(Icons.add_a_photo_sharp),
           Center(
             child: ElevatedButton(
-              child: Text(
-                changeLanguage.tr,
-              ),
               onPressed: () {
                 Get.find<LocalizationService>().toggleLocale();
               },
+              child: Text(
+                changeLanguage.tr,
+              ),
             ),
           ),
         ],

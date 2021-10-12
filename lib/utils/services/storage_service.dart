@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:get/get.dart';
 
 import 'localization_service.dart';
 
@@ -15,6 +16,7 @@ abstract class StorageKeys {
   static const String firstTime = 'FIRST_TIME';
   static const String rememberMe = 'REMEMBER_ME';
   static const String phone = 'phone';
+  static const String darkMode = 'isDarkMode';
 }
 
 class StorageService extends GetxService {
@@ -56,6 +58,12 @@ class StorageService extends GetxService {
 
   // Future<void> setPhone(String phone) async =>
   //     await _prefs.setString(StorageKeys.phone, phone);
+//Active Theme
+
+  bool get isDarkmode => _prefs.read(StorageKeys.darkMode) ?? false;
+  set isDarkmode(bool isDarkMode) {
+    _prefs.write(StorageKeys.darkMode, isDarkMode);
+  }
 
   //Active Locale
   Locale get activeLocale {

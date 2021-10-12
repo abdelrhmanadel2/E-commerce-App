@@ -14,10 +14,10 @@ class ResponseModel {
   });
 
   factory ResponseModel.fromJson(final json) => ResponseModel(
-        message: json["message"] as String ?? "",
-        status: json["status"] as bool ?? false,
-        isAuthorize: json["isAuthorize"] as bool ?? true,
-        totalRecords: json["totalRecords"] as int,
+        message: json["message"]  ?? "",
+        status: json["status"]  ?? false,
+        isAuthorize: json["isAuthorize"] ?? true,
+        totalRecords: json["totalRecords"] ,
         data: json["data"],
       );
 }
