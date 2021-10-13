@@ -4,14 +4,14 @@ import 'package:ecommerce_app/utils/colors.dart';
 class RoundedCornerButton extends StatelessWidget {
   RoundedCornerButton({
     Key? key,
-    required this.title,
+     this.title = "",
     required this.onPressed,
     this.backgroundColor = kPrimaryColor,
     this.textColor = Colors.white,
     this.hasShadow = false,
     this.hasBorder = false,
-    // ignore: avoid_init_to_null
     this.icon = null,
+    required this.borderRadius,
     this.width=0.0 ,
     this.widthOfText=0.0,
     this.heightOfText=0.0,
@@ -30,14 +30,16 @@ class RoundedCornerButton extends StatelessWidget {
   final double width;
   final double height;
   final TextStyle? textStyle;
+  final double borderRadius;
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       width: width ,
       height: height,
       decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(10),
+          color: hasBorder?theme.backgroundColor:backgroundColor,
+          borderRadius: BorderRadius.circular(borderRadius),
           border: hasBorder
               ? Border.all(width: 1, color: kPrimaryColor)
               : Border.all(width: 0, color: Colors.transparent),
@@ -56,10 +58,12 @@ class RoundedCornerButton extends StatelessWidget {
         style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(borderRadius),
         ))),
         child: icon != null
-            ? Container(
+            ? title == ""?Center(
+          child: icon,
+        ) :Container(
                 width: widthOfText,
                 height: heightOfText,
                 child: Row(
@@ -79,7 +83,7 @@ class RoundedCornerButton extends StatelessWidget {
             : Text(
                 "$title",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: textColor, fontSize: 13),
+                style: textStyle,
               ),
       ),
     );
