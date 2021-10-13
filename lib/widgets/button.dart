@@ -32,11 +32,12 @@ class RoundedCornerButton extends StatelessWidget {
   final double borderRadius;
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       width: width,
       height: height,
       decoration: BoxDecoration(
-          color: hasBorder?Colors.transparent:backgroundColor,
+          color: hasBorder?theme.backgroundColor:backgroundColor,
           borderRadius: BorderRadius.circular(borderRadius),
           border: hasBorder
               ? Border.all(width: 1, color: kPrimaryColor)
@@ -59,21 +60,22 @@ class RoundedCornerButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius),
         ))),
         child: icon != null
-            ? Container(
+            ? title == ""?Center(
+          child: icon,
+        ) :Container(
                 width: widthOfText,
                 height: heightOfText,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     icon,
-                    title == ""?Text("$title",
+                    Text("$title",
                         textAlign: TextAlign.center,
                         style: textStyle ??
                             TextStyle(
                                 color: textColor,
                                 fontFamily: "DIN",
                                 fontWeight: FontWeight.bold,
-                                fontSize: 13)):SizedBox(),
+                                fontSize: 13)),
                   ],
                 ),
               )

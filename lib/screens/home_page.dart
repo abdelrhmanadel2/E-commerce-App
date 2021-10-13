@@ -4,7 +4,6 @@ import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:ecommerce_app/widgets/appBar.dart';
 import 'package:ecommerce_app/widgets/button.dart';
-import 'package:ecommerce_app/widgets/circular_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
