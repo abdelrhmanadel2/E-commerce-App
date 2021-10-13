@@ -4,19 +4,18 @@ import 'package:ecommerce_app/utils/colors.dart';
 class RoundedCornerButton extends StatelessWidget {
   RoundedCornerButton({
     Key? key,
-    required this.title,
+     this.title = "",
     required this.onPressed,
     this.backgroundColor = kPrimaryColor,
     this.textColor = Colors.white,
     this.hasShadow = false,
     this.hasBorder = false,
-    // ignore: avoid_init_to_null
     this.icon = null,
     this.width,
     this.widthOfText,
     this.heightOfText,
     this.height,
-    this.textStyle,
+    this.textStyle, required this.borderRadius,
   }) : super(key: key);
   final widthOfText;
   final heightOfText;
@@ -30,14 +29,15 @@ class RoundedCornerButton extends StatelessWidget {
   final width;
   final height;
   final TextStyle? textStyle;
+  final double borderRadius;
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width,
       height: height,
       decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(10),
+          color: hasBorder?Colors.transparent:backgroundColor,
+          borderRadius: BorderRadius.circular(borderRadius),
           border: hasBorder
               ? Border.all(width: 1, color: kPrimaryColor)
               : Border.all(width: 0, color: Colors.transparent),
@@ -56,30 +56,31 @@ class RoundedCornerButton extends StatelessWidget {
         style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(borderRadius),
         ))),
         child: icon != null
             ? Container(
                 width: widthOfText,
                 height: heightOfText,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     icon,
-                    Text("$title",
+                    title == ""?Text("$title",
                         textAlign: TextAlign.center,
                         style: textStyle ??
                             TextStyle(
                                 color: textColor,
                                 fontFamily: "DIN",
                                 fontWeight: FontWeight.bold,
-                                fontSize: 13)),
+                                fontSize: 13)):SizedBox(),
                   ],
                 ),
               )
             : Text(
                 "$title",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: textColor, fontSize: 13),
+                style: textStyle,
               ),
       ),
     );
