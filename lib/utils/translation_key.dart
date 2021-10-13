@@ -1,5 +1,6 @@
 
 const changeLanguage = 'Change_Language';
+const signUp = 'signUp';
 
 const requiredFiled = 'REQUIRED_FILED';
 const invalidPhoneNumber = 'INVALID_PHONE_NUMBER';
