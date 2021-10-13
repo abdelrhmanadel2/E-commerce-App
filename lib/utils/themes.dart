@@ -31,6 +31,7 @@ class Themes {
           backgroundColor: MaterialStateProperty.all(kDarkPrimaryColor),
         ),
       ),
+
       brightness: Brightness.dark,
       primaryColor: kDarkBackgroundColor,
       accentColor: kDarkWhiteColor,
