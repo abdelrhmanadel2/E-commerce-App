@@ -16,31 +16,3 @@ const Color kDarkErrorColor = Color(0xFFFF2424);
 const Color kSuccessColor = Color(0xFF2AA952);
 const Color kDarkSuccessColor = Color(0xFF55D85A);
 const Color kDarkTextColor = Color(0xFF2A2C36);
-const ColorScheme lightColorScheme = ColorScheme.light(
-  primary: kBackgroundColor,
-  primaryVariant: kDarkWhiteColor,
-  secondary: kPrimaryColor,
-  secondaryVariant: kDarkPrimaryColor,
-  background: kBackgroundColor,
-  surface: kBackgroundColor,
-  onBackground: kBlackColor,
-  error: kErrorColor,
-  onError: kWhiteColor,
-  onPrimary: kBlackColor,
-  onSecondary: kWhiteColor,
-  onSurface: kBlackColor,
-);
-const ColorScheme darkColorScheme = ColorScheme.dark(
-  primary: kDarkBackgroundColor,
-  primaryVariant: kBackgroundColor,
-  secondary: kDarkPrimaryColor,
-  secondaryVariant: kPrimaryColor,
-  background: kDarkBackgroundColor,
-  surface: kDarkBackgroundColor,
-  onBackground: kDarkWhiteColor,
-  error: kDarkErrorColor,
-  onError: kDarkWhiteColor,
-  onPrimary: kDarkTextColor,
-  onSecondary: kDarkWhiteColor,
-  onSurface: kDarkWhiteColor,
-);
