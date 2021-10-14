@@ -2,6 +2,7 @@ import 'package:ecommerce_app/services/theme_service.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
 import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/translation_key.dart';
+import 'package:ecommerce_app/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce_app/utils/utils.dart';
@@ -13,12 +14,7 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
-      appBar: AppBar(
-          automaticallyImplyLeading: false,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
-            onPressed: ThemeService().switchTheme,
-          )),
+      appBar: const AppBarWidget(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Form(

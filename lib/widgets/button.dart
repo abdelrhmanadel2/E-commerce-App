@@ -4,7 +4,7 @@ import 'package:ecommerce_app/utils/colors.dart';
 class RoundedCornerButton extends StatelessWidget {
   RoundedCornerButton({
     Key? key,
-     this.title = "",
+    this.title = "",
     required this.onPressed,
     this.backgroundColor = kPrimaryColor,
     this.textColor = Colors.white,
@@ -12,10 +12,10 @@ class RoundedCornerButton extends StatelessWidget {
     this.hasBorder = false,
     this.icon = null,
     required this.borderRadius,
-    this.width=0.0 ,
-    this.widthOfText=0.0,
-    this.heightOfText=0.0,
-    this.height=0.0,
+    this.width = 0.0,
+    this.widthOfText = 0.0,
+    this.heightOfText = 0.0,
+    this.height = 0.0,
     this.textStyle,
   }) : super(key: key);
   final double widthOfText;
@@ -34,14 +34,15 @@ class RoundedCornerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     return Container(
-      width: width ,
+      width: width,
       height: height,
       decoration: BoxDecoration(
-          color: hasBorder?theme.backgroundColor:backgroundColor,
+          color: hasBorder ? theme.backgroundColor : backgroundColor,
           borderRadius: BorderRadius.circular(borderRadius),
           border: hasBorder
-              ? Border.all(width: 1, color: kPrimaryColor)
+              ? Border.all(width: 1, color: theme.colorScheme.onSurface)
               : Border.all(width: 0, color: Colors.transparent),
           boxShadow: hasShadow
               ? [
@@ -49,7 +50,7 @@ class RoundedCornerButton extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.2),
                     spreadRadius: 2,
                     blurRadius: 3,
-                    offset:const Offset(0, 2), // changes position of shadow
+                    offset: const Offset(0, 2), // changes position of shadow
                   )
                 ]
               : null),
@@ -61,30 +62,31 @@ class RoundedCornerButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius),
         ))),
         child: icon != null
-            ? title == ""?Center(
-          child: icon,
-        ) :Container(
-                width: widthOfText,
-                height: heightOfText,
-                child: Row(
-                  children: [
-                    icon,
-                    Text(title,
-                        textAlign: TextAlign.center,
-                        style: textStyle ??
-                            TextStyle(
-                                color: textColor,
-                                fontFamily: "DIN",
-                                fontWeight: FontWeight.bold,
-                                fontSize: 13)),
-                  ],
-                ),
-              )
-            : Text(
-                title,
+            ? title == ""
+                ? Center(
+                    child: icon,
+                  )
+                : Container(
+                    width: widthOfText,
+                    height: heightOfText,
+                    child: Row(
+                      children: [
+                        icon,
+                        Text(title,
+                            textAlign: TextAlign.center,
+                            style: theme.textTheme.button!.apply(
+                                color: hasBorder
+                                    ? theme.colorScheme.onSurface
+                                    : theme.colorScheme.onSecondary)),
+                      ],
+                    ),
+                  )
+            : Text(title,
                 textAlign: TextAlign.center,
-                style: textStyle,
-              ),
+                style: theme.textTheme.button!.apply(
+                    color: hasBorder
+                        ? theme.colorScheme.onSurface
+                        : theme.colorScheme.onSecondary)),
       ),
     );
   }

@@ -25,7 +25,7 @@ class StorageService extends GetxService {
   final GetStorage _prefs;
 
   static Future<StorageService> init() async {
-        // await GetStorage.init();
+    // await GetStorage.init();
     final GetStorage prefs = GetStorage();
     return StorageService(prefs);
   }

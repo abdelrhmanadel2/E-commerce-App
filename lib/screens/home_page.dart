@@ -9,6 +9,7 @@ import 'package:ecommerce_app/widgets/app_bar.dart';
 import 'package:ecommerce_app/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -22,7 +23,7 @@ class HomePage extends StatelessWidget {
             icon: Get.isDarkMode
                 ? const Icon(Icons.light_mode)
                 : const Icon(Icons.dark_mode),
-            onPressed: ThemeService().switchTheme,
+            onPressed: Get.find<ThemeService>().switchTheme,
           ),
           IconButton(
               onPressed: () {
@@ -53,78 +54,77 @@ class HomePage extends StatelessWidget {
               'Change Theme',
             ),
             onPressed: () {
-              Get.to(SignupScreen());
+              Get.to(() => SignupScreen());
             },
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               RoundedCornerButton(
-                title: "",
                 onPressed: () {
                   print("hg");
                 },
                 icon: Image.asset("assets/icons/fGroup.png"),
-                height: 64.0,
-                width: 92.0,
+                height: 64.0.h,
+                width: 92.0.w,
                 backgroundColor: Colors.white,
                 borderRadius: 20.0,
               ),
               RoundedCornerButton(
-                title: "",
                 onPressed: () {
                   print("hg");
                 },
                 icon: Image.asset("assets/icons/Group.png"),
                 hasShadow: true,
-                height: 64.0,
-                width: 92.0,
+                height: 64.0.h,
+                width: 92.0.w,
                 backgroundColor: Colors.white,
                 borderRadius: 20.0,
               ),
             ],
           ),
+          ElevatedButton(
+            child: Text(
+              'Change Theme',
+            ),
+            onPressed: () {
+              print("1");
+            },
+          ),
           RoundedCornerButton(
-            title: "",
             onPressed: () {
               print("hg");
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.add,
-              color: Colors.white,
             ),
             hasShadow: true,
             height: 40.0,
             width: 40.0,
-            backgroundColor: Colors.black,
+            backgroundColor: theme.colorScheme.onSurface,
             borderRadius: 50.0,
           ),
           RoundedCornerButton(
-            title: "primary",
+            title: "Primary",
             onPressed: () {
               print("hg");
             },
             hasShadow: true,
-            height: 48.0,
-            width: Get.width * 0.9,
-            backgroundColor: kPrimaryColor,
-            textStyle: extend(Styles.kTextStyleHeadline3,
-                TextStyle(color: theme.backgroundColor)),
-            borderRadius: 50.0,
+            height: 48.0.h,
+            width: 343.w,
+            backgroundColor: theme.colorScheme.secondary,
+            borderRadius: 50.0.r,
           ),
           RoundedCornerButton(
-            title: "primary",
+            title: "Outline",
             onPressed: () {
               print("hg");
             },
             hasBorder: true,
             hasShadow: true,
-            height: 48.0,
-            width: Get.width * 0.9,
-            backgroundColor: theme.backgroundColor,
-            textStyle: extend(
-                Styles.kTextStyleHeadline3, TextStyle(color: kPrimaryColor)),
-            borderRadius: 50.0,
+            height: 48.0.h,
+            width: 343.w,
+            borderRadius: 50.0.r,
           ),
         ],
       ),

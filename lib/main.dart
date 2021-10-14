@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/screens/home_page.dart';
-import 'package:ecommerce_app/screens/signupScreen/signup_screen.dart';
 import 'package:ecommerce_app/services/theme_service.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
 import 'package:ecommerce_app/utils/services/storage_service.dart';
@@ -12,9 +11,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
+  await GetStorage.init();
   await Get.putAsync(() => StorageService.init(), permanent: true);
-  Get.put(LocalizationService.init(), permanent: true);
-  GetStorage.init();
+  Get.put(LocalizationService(), permanent: true);
+  Get.put(ThemeService(), permanent: true);
   runApp(MyApp());
 }
 
@@ -36,8 +36,8 @@ class MyApp extends StatelessWidget {
               ],
               theme: Themes.lightTheme,
               darkTheme: Themes.darkTheme,
-              themeMode: ThemeService().theme,
-              home: SignupScreen(),
+              themeMode: Get.find<ThemeService>().theme,
+              home: HomePage(),
             ));
   }
 }

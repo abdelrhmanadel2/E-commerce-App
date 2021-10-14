@@ -2,25 +2,16 @@ import 'package:ecommerce_app/utils/services/storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: avoid_classes_with_only_static_members
 class SupportedLocales {
-  static List<Locale> all = [Locale("en"), Locale("ar")];
+  static List<Locale> all = [const Locale("en"), const Locale("ar")];
 
-  static Locale english = Locale("en");
-  static Locale arabic = Locale("ar");
+  static Locale english = const Locale("en");
+  static Locale arabic = const Locale("ar");
 }
 
 class LocalizationService extends GetxService {
-  LocalizationService(this._activeLocale);
-
-  final Locale _activeLocale;
-
-  Locale get activeLocale => _activeLocale;
-
-  static LocalizationService init() {
-    //Get active local from storage
-    final Locale activeLocale = Get.find<StorageService>().activeLocale;
-    return LocalizationService(activeLocale);
-  }
+  Locale get activeLocale => Get.find<StorageService>().activeLocale;
 
   void toggleLocale() {
     final Locale newLocale =
