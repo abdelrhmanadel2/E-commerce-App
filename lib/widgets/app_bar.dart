@@ -36,7 +36,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       )
           : Container(),
       title: Text(
-        title,
+        title??"",
         style:extend(
             Styles.kTextStyleHeadline3, TextStyle(color: theme.accentColor)),
       ),
