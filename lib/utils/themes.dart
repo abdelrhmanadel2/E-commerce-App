@@ -17,6 +17,8 @@ class Themes {
       //   foregroundColor:
       //       MaterialStateProperty.all(lightColorScheme.onBackground),
       // )),
+      indicatorColor: kSuccessColor,
+
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(10),
@@ -42,8 +44,9 @@ class Themes {
       primaryColor: kWhiteColor,
       backgroundColor: kBackgroundColor,
       accentColor: kBlackColor,
+      hintColor: kGrayColor,
       iconTheme: const IconThemeData(color: kGrayColor),
-      accentIconTheme: const IconThemeData(color: kGrayColor),
+      accentIconTheme: const IconThemeData(color: kPrimaryColor),
       focusColor: kPrimaryColor,
       primaryIconTheme: const IconThemeData(color: kBlackColor),
       textTheme: Styles.textTheme.apply(
@@ -71,6 +74,8 @@ class Themes {
       //         borderRadius: BorderRadius.all(Radius.circular(25.0.r)))),
       //   ),
       // ),
+      hintColor: kDarkGrayColor,
+      indicatorColor: kDarkSuccessColor,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(10),
@@ -98,8 +103,11 @@ class Themes {
       accentColor: kDarkWhiteColor,
       scaffoldBackgroundColor: kDarkBackgroundColor,
       backgroundColor: kDarkBackgroundColor,
-      iconTheme: const IconThemeData(color: kDarkGrayColor),
-      focusColor: kDarkPrimaryColor,
+
+      // iconTheme: const IconThemeData(opacity: 1, color: kErrorColor),
+      primaryIconTheme: const IconThemeData(opacity: 1, color: kDarkWhiteColor),
+      accentIconTheme: const IconThemeData(opacity: 1, color: kPrimaryColor),
+      focusColor: kDarkWhiteColor,
       textTheme: Styles.textTheme.apply(
           bodyColor: darkColorScheme.onBackground,
           displayColor: darkColorScheme.onBackground),

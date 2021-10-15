@@ -8,6 +8,7 @@ import 'package:ecommerce_app/utils/utils.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
 import 'package:ecommerce_app/widgets/button.dart';
 import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
+import 'package:ecommerce_app/widgets/input_field_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,9 +36,10 @@ class HomePage extends StatelessWidget {
                 color: theme.accentColor,
               ))
         ],
-        title: "jhiiiiii",
+        title: signUp.tr,
       ),
       body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         physics: ClampingScrollPhysics(),
         child: Column(
           children: [
@@ -191,6 +193,15 @@ class HomePage extends StatelessWidget {
                 print("1");
               },
             ),
+            const SizedBox(height: 15),
+            CustomInputfield(
+              labelText: "UserName",
+            ),
+            const SizedBox(height: 15),
+            CustomInputfield(
+              labelText: "UserName",
+            ),
+            const SizedBox(height: 70)
           ],
         ),
       ),

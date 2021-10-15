@@ -50,6 +50,7 @@ class Styles {
     headline6: kTextStyleHeadline3,
     subtitle1: kTextStyleSubheads,
     button: kTextStyleDescriptive,
+    caption: kTextStyleHelperText,
     overline: kTextStyleHelperText,
     bodyText1: kTextStyleRegular,
     bodyText2: kTextStyleDescription,

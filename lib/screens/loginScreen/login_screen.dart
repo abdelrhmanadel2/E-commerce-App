@@ -1,6 +1,5 @@
-import 'package:ecommerce_app/screens/loginScreen/login_screen.dart';
-import 'package:ecommerce_app/screens/signupScreen/signup_controller.dart';
-import 'package:ecommerce_app/screens/signupScreen/signup_helper.dart';
+import 'package:ecommerce_app/screens/ForgotPasswordScreen/forgot_password_screen.dart';
+import 'package:ecommerce_app/screens/loginScreen/login_controller.dart';
 import 'package:ecommerce_app/services/theme_service.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
@@ -15,14 +14,14 @@ import 'package:get/get.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SignupScreen extends StatelessWidget {
+class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
         appBar: const AppBarWidget(),
-        body: GetBuilder<SignupController>(
-            init: SignupController(),
+        body: GetBuilder<LoginController>(
+            init: LoginController(),
             builder: (controller) => SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -39,12 +38,6 @@ class SignupScreen extends StatelessWidget {
                             style: theme.textTheme.headline1,
                           ),
                           SizedBox(height: 75.h),
-                          CustomInputfield(
-                              labelText: "Name".tr,
-                              controller: controller.nameController,
-                              validator: controller.validateName,
-                              validated: controller.nameState.value),
-                          SizedBox(height: 8.h),
                           CustomInputfield(
                               labelText: "Email".tr,
                               controller: controller.emailController,
@@ -88,12 +81,12 @@ class SignupScreen extends StatelessWidget {
                             children: [
                               InkWell(
                                   onTap: () {
-                                    Get.to(LoginScreen());
+                                    Get.to(ForgotPasswordScreen());
                                   },
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      Text("HaveAcount".tr),
+                                      Text("FORGOTPASSWORD".tr),
                                       SizedBox(width: 4.w),
                                       Icon(
                                         Get.find<LocalizationService>()
@@ -113,14 +106,14 @@ class SignupScreen extends StatelessWidget {
                                 width: 343,
                                 height: 48,
                                 onPressed: () {},
-                                text: "SIGN UP"),
+                                text: "LOGIN"),
                           ),
                           SizedBox(height: 126.r),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                "Or sign up with social accoint",
+                                "Or login with social accoint",
                                 textAlign: TextAlign.center,
                               ),
                               SizedBox(height: 12.h),
