@@ -67,7 +67,7 @@ Widget build(BuildContext context) {
                     Container(
                       color: kWhiteColor,
                       width: Get.width,
-                      height: Get.height*0.68,
+                      height: Get.height*0.62,
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(15.0, 33.0, 15.0, 0.0),
                         child: SingleChildScrollView(
