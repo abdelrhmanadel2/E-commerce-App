@@ -49,8 +49,8 @@ class RoundedCornerButton extends StatelessWidget {
             boxShadow: hasShadow
                 ? [
                     const BoxShadow(
-                      color: Color.fromRGBO(211, 38, 38, 0.25),
-                      blurRadius: 8,
+                      color: Colors.grey,
+                      blurRadius: 8.0,
                       offset: Offset(0, 4), // changes position of shadow
                     )
                   ]

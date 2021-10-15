@@ -10,6 +10,10 @@ class Styles {
       kTextStyleRegular,
       TextStyle(
         fontSize: 14.sp,
+      ));static final kTextStyleSmallDescription = extend(
+      kTextStyleRegular,
+      TextStyle(
+        fontSize: 8.sp,
       ));
   static final kTextStyleDescriptive = extend(
       kTextStyleDescription,
@@ -27,6 +31,18 @@ class Styles {
       TextStyle(
         fontWeight: FontWeight.w700,
         fontSize: 34.sp,
+      ));
+  static final kTextStyleitemHeadline = extend(
+      kTextStyleRegular,
+      TextStyle(
+        fontWeight: FontWeight.w700,
+        fontSize: 16.sp,
+      ));
+  static final kTextStyleMassiveHeadline = extend(
+      kTextStyleRegular,
+      TextStyle(
+        fontWeight: FontWeight.w700,
+        fontSize: 48.sp,
       ));
   static final kTextStyleSubheads = extend(
       kTextStyleRegular,

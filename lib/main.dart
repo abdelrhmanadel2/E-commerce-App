@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/screens/home/home_screen.dart';
 import 'package:ecommerce_app/screens/home_page.dart';
 import 'package:ecommerce_app/services/theme_service.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
               theme: Themes.lightTheme,
               darkTheme: Themes.darkTheme,
               themeMode: Get.find<ThemeService>().theme,
-              home: HomePage(),
+              home: homeScreen(),
             ));
   }
 }
