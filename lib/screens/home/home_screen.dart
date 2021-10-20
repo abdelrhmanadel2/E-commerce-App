@@ -1,16 +1,14 @@
+import 'package:ecommerce_app/screens/mainCategory/main_catetgories.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
 import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/utils.dart';
-import 'package:ecommerce_app/widgets/button.dart';
+import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import 'home_widget/item_cell.dart';
-
+import 'home_widget/sale_sreen.dart';
 class homeScreen extends StatefulWidget {
 @override
 _homeScreenState createState() =>
@@ -22,6 +20,7 @@ extends State<homeScreen> {
 @override
 Widget build(BuildContext context) {
   return Scaffold(
+    backgroundColor: kWhiteColor,
     body: Stack(
       children: <Widget>[
         Image.asset("assets/images/fashionSalesBanner.png",width: Get.width,fit: BoxFit.fill,),
@@ -31,6 +30,7 @@ Widget build(BuildContext context) {
           minChildSize: 0.55,
           builder: (context, scrollController) {
             return Container(
+
               width:  double.infinity,
               child: SingleChildScrollView(
                 physics : ClampingScrollPhysics(),
@@ -43,26 +43,28 @@ Widget build(BuildContext context) {
                       padding: const EdgeInsets.fromLTRB(15.0,0.0,15.0,0.0),
                       child: SizedBox(
                           width: 190,
-                          child: Text(
-                            "Fashionsale",
-                            textAlign: TextAlign.left,
-                            style:extend(Styles.kTextStyleMassiveHeadline, const TextStyle(color: kWhiteColor)),
-        )
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Fashion",
+                              textAlign: TextAlign.left,
+                              style:extend(Styles.kTextStyleHeadline, const TextStyle(color: kWhiteColor)),
+                            ),
+                            Text(
+                              "Sale",
+                              textAlign: TextAlign.left,
+                              style:extend(Styles.kTextStyleHeadline, const TextStyle(color: kWhiteColor)),
+                            ),
+                          ],
+                        ),
     ),
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(15.0,18.0,15.0,32.0),
-                      child: RoundedCornerButton(
-                        title: "check",
-                        onPressed: () {
-                          print("hg");
-                        },
-                        hasShadow: true,
-                        height: 32.0,
-                        width: 140,
-                        backgroundColor: kPrimaryColor,
-                        borderRadius: 50.0.r,
-                      ),
+                      child: CustomElevatedButton(
+                          width: 153, height: 32, onPressed: () { Get.to(() => saleScreen(),transition: Transition.cupertino);}, text: "check"),
                     ),
                     Container(
                       color: kWhiteColor,

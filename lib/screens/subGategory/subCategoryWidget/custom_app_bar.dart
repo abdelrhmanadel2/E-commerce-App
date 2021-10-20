@@ -1,6 +1,6 @@
+import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:ecommerce_app/utils/styles.dart';
 
@@ -19,6 +19,9 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    var borderColor1 = kWhiteColor;
+    var borderColor2 = kWhiteColor;
+    var borderColor3 = kWhiteColor;
     final theme = Theme.of(context);
     return AppBar(
       elevation: hasElevation ? 1 : 0,
@@ -36,6 +39,21 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         ),
       )
           : Container(),
+      bottom:  TabBar(//Add tab bar to title
+        indicator: BoxDecoration(
+            border: Border(bottom: BorderSide(color: kPrimaryColor,width: 2.0)),
+            ),
+        labelColor: kBlackColor,
+        labelStyle: extend(
+            Styles.kTextStyleHeadline3, TextStyle(color: theme.accentColor)),
+        unselectedLabelColor: kBlackColor,
+        isScrollable: false,
+        tabs: [
+          Tab(text: "Women",),
+          Tab(text: "Men",),
+          Tab(text: "Kids",),
+        ],
+      ),
       title: Text(
         title??"",
         style:extend(
@@ -47,5 +65,5 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size(double.infinity, 60);
+  Size get preferredSize => Size(double.infinity, 100);
 }

@@ -1,5 +1,7 @@
 import 'package:ecommerce_app/screens/home/home_screen.dart';
 import 'package:ecommerce_app/screens/home_page.dart';
+import 'package:ecommerce_app/screens/mainCategory/main_catetgories.dart';
+import 'package:ecommerce_app/screens/subGategory/sub_gategory_screen.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
@@ -26,11 +28,11 @@ class _CustomWidgetExampleState extends State<CustomWidgetExample> {
 
   List<Widget> _buildScreens() {
     return [
-      homeScreen(),homeScreen(),homeScreen(),homeScreen(),HomePage(),
+      homeScreen(),mainCategory(),SubCategory(),homeScreen(),HomePage(),
     ];
   }
 
-  List<PersistentBottomNavBarItem> _navBarsItems() {
+  List<PersistentBottomNavBarItem> navBarsItems() {
     return [
       PersistentBottomNavBarItem(
         icon: Icon(Icons.home),
@@ -83,7 +85,7 @@ class _CustomWidgetExampleState extends State<CustomWidgetExample> {
           duration: Duration(milliseconds: 200),
         ),
         customWidget: CustomNavBarWidget(
-          items: _navBarsItems(),
+          items: navBarsItems(),
           onItemSelected: (index) {
             setState(() {
               _controller.index = index; // THIS IS CRITICAL!! Don't miss it!

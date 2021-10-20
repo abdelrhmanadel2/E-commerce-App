@@ -2,6 +2,7 @@ import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:ecommerce_app/widgets/button.dart';
+import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -82,18 +83,17 @@ class ItemCell extends StatelessWidget {
                 ),
                 Positioned(
                   bottom: 0.0,
-                  right: 0.0,
-                  child: RoundedCornerButton(
-                    icon: const Icon(Icons.favorite_outline_sharp,size: 15.0,color: kBlackColor,),
-                    onPressed: () {
-                      addToFavorite();
-                      },
-                    hasShadow: true,
-                    height: 36.0,
-                    width: 36.0,
-                    backgroundColor: kWhiteColor,
-                    borderRadius: 50.0,
+                  right: -10.0,
+                  child:CustomElevatedButton(
+                    width: 30,
+                    height: 30,
+                    forground: kBlackColor,
+                    background: kWhiteColor,
+                    circle: true,
+                    onPressed: () {},
+                    icon: Icon(Icons.favorite_outline_sharp, size: 15.0),
                   ),
+
                 ),
               ],
             ),

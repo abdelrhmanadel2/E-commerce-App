@@ -1,11 +1,9 @@
-import 'package:ecommerce_app/screens/home/home_screen.dart';
-import 'package:ecommerce_app/screens/home_page.dart';
 import 'package:ecommerce_app/services/theme_service.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
 import 'package:ecommerce_app/utils/services/storage_service.dart';
 import 'package:ecommerce_app/utils/themes.dart';
 import 'package:ecommerce_app/utils/translation/app_translation.dart';
-import 'package:ecommerce_app/widgets/tabBar.dart';
+import 'package:ecommerce_app/widgets/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
