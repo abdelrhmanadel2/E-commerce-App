@@ -7,7 +7,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class Themes {
   static ThemeData get lightTheme {
     return ThemeData.light().copyWith(
-      scaffoldBackgroundColor: kBackgroundColor,
       // textButtonTheme: TextButtonThemeData(
       //     style: ButtonStyle(
       //   shadowColor:
@@ -41,9 +40,11 @@ class Themes {
         shape: MaterialStateProperty.all(RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(25.0.r)))),
       )),
+      scaffoldBackgroundColor: kBackgroundColor,
       primaryColor: kWhiteColor,
       backgroundColor: kBackgroundColor,
       accentColor: kBlackColor,
+      appBarTheme: const AppBarTheme(backgroundColor: kBackgroundColor),
       hintColor: kGrayColor,
       iconTheme: const IconThemeData(color: kGrayColor),
       accentIconTheme: const IconThemeData(color: kPrimaryColor),
@@ -98,6 +99,8 @@ class Themes {
         shape: MaterialStateProperty.all(RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(25.0.r)))),
       )),
+      appBarTheme: const AppBarTheme(backgroundColor: kDarkBackgroundColor),
+
       brightness: Brightness.dark,
       primaryColor: kDarkBackgroundColor,
       accentColor: kDarkWhiteColor,

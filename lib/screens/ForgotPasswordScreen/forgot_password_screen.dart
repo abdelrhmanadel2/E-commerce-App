@@ -1,16 +1,11 @@
 import 'package:ecommerce_app/screens/ForgotPasswordScreen/forgot_password_controller.dart';
-import 'package:ecommerce_app/services/theme_service.dart';
 import 'package:ecommerce_app/utils/colors.dart';
-import 'package:ecommerce_app/utils/services/localization_service.dart';
-import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/translation_key.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
 import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
 import 'package:ecommerce_app/widgets/input_field_text.dart';
-import 'package:ecommerce_app/widgets/validation_sign.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ecommerce_app/utils/utils.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
@@ -41,10 +36,21 @@ class ForgotPasswordScreen extends StatelessWidget {
                               "Please, enter your email address. You will receive a link to create a new password via email."),
                           SizedBox(height: 18.h),
                           CustomInputfield(
-                              labelText: "Email".tr,
-                              controller: controller.emailController,
-                              validator: controller.validateEmail,
-                              validated: controller.emailValidated),
+                            onchange: controller.onUpdate,
+                            labelText: "Email".tr,
+                            controller: controller.emailController,
+                            validator: controller.validateEmail,
+                            validated: controller.emailValidated,
+                            icon: (controller.emailValidated)
+                                ? (controller.emailState)
+                                    ? const Icon(Icons.check_rounded,
+                                        color: kSuccessColor)
+                                    : const Icon(
+                                        Icons.close_outlined,
+                                        color: kErrorColor,
+                                      )
+                                : null,
+                          ),
                           SizedBox(height: 53.h),
                           Center(
                             child: CustomElevatedButton(

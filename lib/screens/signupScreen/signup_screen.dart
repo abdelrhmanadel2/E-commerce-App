@@ -1,18 +1,13 @@
 import 'package:ecommerce_app/screens/loginScreen/login_screen.dart';
 import 'package:ecommerce_app/screens/signupScreen/signup_controller.dart';
-import 'package:ecommerce_app/screens/signupScreen/signup_helper.dart';
-import 'package:ecommerce_app/services/theme_service.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
-import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/translation_key.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
 import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
 import 'package:ecommerce_app/widgets/input_field_text.dart';
-import 'package:ecommerce_app/widgets/validation_sign.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ecommerce_app/utils/utils.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -40,16 +35,36 @@ class SignupScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 75.h),
                           CustomInputfield(
-                              labelText: "Name".tr,
-                              controller: controller.nameController,
-                              validator: controller.validateName,
-                              validated: controller.nameState.value),
+                            onchange: controller.onNameupdate,
+                            labelText: "Name".tr,
+                            controller: controller.nameController,
+                            validator: controller.validateName,
+                            icon: (controller.nameValidated)
+                                ? (controller.nameState)
+                                    ? const Icon(Icons.check_rounded,
+                                        color: kSuccessColor)
+                                    : const Icon(
+                                        Icons.close_outlined,
+                                        color: kErrorColor,
+                                      )
+                                : null,
+                          ),
                           SizedBox(height: 8.h),
                           CustomInputfield(
-                              labelText: "Email".tr,
-                              controller: controller.emailController,
-                              validator: controller.validateEmail,
-                              validated: controller.emailValidated),
+                            onchange: controller.onEmailUpdate,
+                            labelText: "Email".tr,
+                            controller: controller.emailController,
+                            validator: controller.validateEmail,
+                            icon: (controller.emailValidated)
+                                ? (controller.emailState)
+                                    ? const Icon(Icons.check_rounded,
+                                        color: kSuccessColor)
+                                    : const Icon(
+                                        Icons.close_outlined,
+                                        color: kErrorColor,
+                                      )
+                                : null,
+                          ),
                           SizedBox(height: 8.h),
                           CustomInputfield(
                               labelText: "Password".tr,

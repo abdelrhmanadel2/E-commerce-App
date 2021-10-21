@@ -1,18 +1,15 @@
 import 'package:ecommerce_app/screens/ForgotPasswordScreen/forgot_password_screen.dart';
 import 'package:ecommerce_app/screens/loginScreen/login_controller.dart';
-import 'package:ecommerce_app/services/theme_service.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
-import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/translation_key.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
 import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
 import 'package:ecommerce_app/widgets/input_field_text.dart';
-import 'package:ecommerce_app/widgets/validation_sign.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ecommerce_app/utils/utils.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/services.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -39,15 +36,26 @@ class LoginScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 75.h),
                           CustomInputfield(
-                              labelText: "Email".tr,
-                              controller: controller.emailController,
-                              validator: controller.validateEmail,
-                              validated: controller.emailValidated),
+                            onchange: controller.onUpdate,
+                            labelText: "Email".tr,
+                            controller: controller.emailController,
+                            validator: controller.validateEmail,
+                            icon: (controller.emailValidated)
+                                ? (controller.emailState)
+                                    ? const Icon(Icons.check_rounded,
+                                        color: kSuccessColor)
+                                    : const Icon(
+                                        Icons.close_outlined,
+                                        color: kErrorColor,
+                                      )
+                                : null,
+                          ),
                           SizedBox(height: 8.h),
                           CustomInputfield(
                               labelText: "Password".tr,
                               controller: controller.passwordController,
                               validator: controller.validatePassword,
+                              validated: controller.passValidated,
                               isAutoValidate: true,
                               obsecure: !controller.visiblePsd,
                               keyboardType: TextInputType.visiblePassword,
@@ -81,7 +89,8 @@ class LoginScreen extends StatelessWidget {
                             children: [
                               InkWell(
                                   onTap: () {
-                                    Get.to(ForgotPasswordScreen());
+                                    Get.off(() => ForgotPasswordScreen());
+                                    // Get.to(() => ForgotPasswordScreen());
                                   },
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,

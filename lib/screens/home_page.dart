@@ -1,10 +1,9 @@
+import 'package:ecommerce_app/screens/catalog/catalog_screen.dart';
+import 'package:ecommerce_app/screens/loginScreen/login_screen.dart';
 import 'package:ecommerce_app/screens/signupScreen/signup_screen.dart';
 import 'package:ecommerce_app/services/theme_service.dart';
-import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
-import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/translation_key.dart';
-import 'package:ecommerce_app/utils/utils.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
 import 'package:ecommerce_app/widgets/button.dart';
 import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
@@ -40,7 +39,7 @@ class HomePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        physics: ClampingScrollPhysics(),
+        physics: const ClampingScrollPhysics(),
         child: Column(
           children: [
             const Icon(Icons.add_a_photo_sharp),
@@ -55,13 +54,22 @@ class HomePage extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              child: Text(
+              child: const Text(
                 'Change Theme',
               ),
               onPressed: () {
                 Get.to(() => SignupScreen());
               },
             ),
+            ElevatedButton(
+              child: const Text(
+                ' women\'s clothing',
+              ),
+              onPressed: () {
+                Get.to(() => CatalogScreen(title: " women's clothing"));
+              },
+            ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -194,13 +202,6 @@ class HomePage extends StatelessWidget {
               },
             ),
             const SizedBox(height: 15),
-            CustomInputfield(
-              labelText: "UserName",
-            ),
-            const SizedBox(height: 15),
-            CustomInputfield(
-              labelText: "UserName",
-            ),
             const SizedBox(height: 70)
           ],
         ),

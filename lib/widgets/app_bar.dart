@@ -22,26 +22,24 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: hasElevation ? 1 : 0,
       centerTitle: true,
-      backgroundColor:  theme.backgroundColor,
+      backgroundColor: theme.primaryColor,
       actions: actions,
       leading: hasBackButton
           ? IconButton(
-        onPressed: () {
-          Get.back();
-        },
-        icon: Icon(
-          Icons.arrow_back_ios,
-          color:  theme.accentColor,
-        ),
-      )
+              onPressed: () {
+                Get.back();
+              },
+              icon: Icon(
+                Icons.arrow_back_ios,
+                color: theme.accentColor,
+              ),
+            )
           : Container(),
       title: Text(
-        title??"",
-        style:extend(
+        title ?? "",
+        style: extend(
             Styles.kTextStyleHeadline3, TextStyle(color: theme.accentColor)),
       ),
-
-
     );
   }
 

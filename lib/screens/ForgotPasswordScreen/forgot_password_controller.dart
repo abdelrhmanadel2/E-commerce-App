@@ -9,16 +9,11 @@ class ForgotPasswordController extends GetxController {
   final _validatorHelber = SignupHelper.instance;
 
   final formKey = GlobalKey<FormState>();
-  late TextEditingController nameController;
-  late TextEditingController passwordController;
   late TextEditingController emailController;
-  bool? nameValidated;
-  bool? passValidated;
-  bool? emailValidated;
+
+  bool emailValidated = false;
   bool formValidated = false;
-  RxBool nameState = false.obs;
-  RxBool passState = false.obs;
-  RxBool emailState = false.obs;
+  bool emailState = false;
 
   // InqueryModel? _inqueryModel;
   @override
@@ -29,7 +24,7 @@ class ForgotPasswordController extends GetxController {
 
   @override
   void onClose() {
-    passwordController.dispose();
+    emailController.dispose();
     super.onClose();
   }
 
@@ -61,13 +56,25 @@ class ForgotPasswordController extends GetxController {
   //     },
   //   );
   // }
+  void onUpdate(String? value) {
+    if (value == "") {
+      emailValidated = false;
+    }
+    update();
+  }
 
   String? validateEmail(String? email) {
-    var validateEmail = _validatorHelber.validateEmail(email);
-    if (validateEmail == null) {
-      emailState = true.obs;
+    final validateEmail = _validatorHelber.validateEmail(email);
+    if (email == "") {
+      emailState = false;
+      emailValidated = false;
+    } else if (validateEmail == null) {
+      emailState = true;
+      emailValidated = true;
+    } else {
+      emailValidated = true;
+      emailState = false;
     }
-    emailValidated = true;
     return validateEmail;
   }
 
@@ -89,6 +96,6 @@ class ForgotPasswordController extends GetxController {
 
   @override
   String toString() {
-    return 'LoginController{ _firstName: ${nameController.value},_email: ${emailController.value}, _password: ${passwordController.value}}';
+    return 'LoginController{ _email: ${emailController.value}}';
   }
 }

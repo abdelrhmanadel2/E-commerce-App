@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomInputfield extends StatelessWidget {
-  const CustomInputfield(
+  CustomInputfield(
       {Key? key,
       this.labelText,
       this.icon,
+      this.onchange,
       this.controller,
       this.keyboardType,
       this.validator,
@@ -18,7 +19,8 @@ class CustomInputfield extends StatelessWidget {
       : super(key: key);
   final labelText;
   final icon;
-  final validated;
+  var validated;
+  final onchange;
   final TextEditingController? controller;
   final void Function(String?)? onSaved;
   final String? Function(String?)? validator;
@@ -26,6 +28,7 @@ class CustomInputfield extends StatelessWidget {
   final bool isAutoValidate;
   final TextInputType? keyboardType;
   final bool obsecure;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -37,14 +40,7 @@ class CustomInputfield extends StatelessWidget {
         filled: true,
         labelText: labelText,
         labelStyle: theme.textTheme.caption!.apply(color: theme.hintColor),
-        suffixIcon: validated == null
-            ? icon
-            : validated
-                ? Icon(Icons.check_rounded, color: kSuccessColor)
-                : Icon(
-                    Icons.close_outlined,
-                    color: kErrorColor,
-                  ),
+        suffixIcon: icon,
         floatingLabelBehavior: FloatingLabelBehavior.auto,
         errorBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.red),
@@ -56,6 +52,7 @@ class CustomInputfield extends StatelessWidget {
             borderSide: BorderSide(color: Colors.transparent),
             borderRadius: BorderRadius.circular(4.r)),
       ),
+      onChanged: onchange,
       controller: controller,
       validator: validator,
       autovalidateMode: isAutoValidate

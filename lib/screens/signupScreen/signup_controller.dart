@@ -37,16 +37,17 @@ class SignupController extends GetxController {
   }
 
   final formKey = GlobalKey<FormState>();
-  late TextEditingController nameController;
+  late TextEditingController nameController =
+      TextEditingController(text: "55d");
   late TextEditingController passwordController;
   late TextEditingController emailController;
-  bool? nameValidated;
-  bool? passValidated;
-  bool? emailValidated;
+  bool nameValidated = false;
+  bool passValidated = false;
+  bool emailValidated = false;
   bool formValidated = false;
-  RxBool nameState = false.obs;
-  RxBool passState = false.obs;
-  RxBool emailState = false.obs;
+  bool nameState = false;
+  bool passState = false;
+  bool emailState = false;
 
   // InqueryModel? _inqueryModel;
   @override
@@ -95,29 +96,51 @@ class SignupController extends GetxController {
   //     },
   //   );
   // }
+  void onEmailUpdate(String? value) {
+    if (value == "") {
+      emailValidated = false;
+    }
+    update();
+  }
+
+  void onNameupdate(String? value) {
+    if (value == "") {
+      nameState = false;
+    }
+    update();
+  }
 
   String? validateEmail(String? email) {
-    var validateEmail = _validatorHelber.validateEmail(email);
-    if (validateEmail == null) {
-      emailState = true.obs;
+    final validateEmail = _validatorHelber.validateEmail(email);
+    if (email == "") {
+      emailState = false;
+      emailValidated = false;
+    } else if (validateEmail == null) {
+      emailState = true;
+      emailValidated = true;
+    } else {
+      emailValidated = true;
+      emailState = false;
     }
-    emailValidated = true;
     return validateEmail;
   }
 
   String? validateName(String? name) {
-    final validateName = _validatorHelber.validateName(name);
-    if (validateName == null) {
-      nameState = true.obs;
+    var validateName = _validatorHelber.validateName(name);
+    if (validateName == null && name != "") {
+      nameState = true;
+      nameValidated = true;
+    } else {
+      nameValidated = true;
+      nameState = false;
     }
-    nameValidated = true;
     return validateName;
   }
 
   String? validatePassword(String? password) {
     final validatePassword = _validatorHelber.validatePassword(password);
     if (validatePassword == null) {
-      passState = true.obs;
+      passState = true;
     }
     passValidated = true;
     return validatePassword;

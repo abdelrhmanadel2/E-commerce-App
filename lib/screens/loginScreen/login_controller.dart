@@ -14,8 +14,6 @@ class LoginController extends GetxController {
 
   RxBool _isEnableLogin = false.obs;
 
-
-
   bool get isEnableLogin => _isEnableLogin.value;
   bool get visiblePsd => _visiblePsd.value;
 
@@ -31,29 +29,25 @@ class LoginController extends GetxController {
   }
 
   final formKey = GlobalKey<FormState>();
-  late TextEditingController nameController;
   late TextEditingController passwordController;
   late TextEditingController emailController;
-  bool? nameValidated;
-  bool? passValidated;
-  bool? emailValidated;
+  bool passValidated = false;
+  bool emailValidated = false;
   bool formValidated = false;
-  RxBool nameState = false.obs;
-  RxBool passState = false.obs;
-  RxBool emailState = false.obs;
+  bool nameState = false;
+  bool passState = false;
+  bool emailState = false;
 
   // InqueryModel? _inqueryModel;
   @override
   void onInit() {
     super.onInit();
-    nameController = TextEditingController();
     passwordController = TextEditingController();
     emailController = TextEditingController();
   }
 
   @override
   void onClose() {
-    nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     super.onClose();
@@ -62,7 +56,6 @@ class LoginController extends GetxController {
   void clear() {
     passwordController.clear();
     // phoneController.clear();
-    nameController.clear();
     emailController.clear();
   }
 
@@ -90,28 +83,32 @@ class LoginController extends GetxController {
   //   );
   // }
 
-  String? validateEmail(String? email) {
-    var validateEmail = _validatorHelber.validateEmail(email);
-    if (validateEmail == null) {
-      emailState = true.obs;
+  void onUpdate(String? value) {
+    if (value == "") {
+      emailValidated = false;
     }
-    emailValidated = true;
-    return validateEmail;
+    update();
   }
 
-  String? validateName(String? name) {
-    final validateName = _validatorHelber.validateName(name);
-    if (validateName == null) {
-      nameState = true.obs;
+  String? validateEmail(String? email) {
+    final validateEmail = _validatorHelber.validateEmail(email);
+    if (email == "") {
+      emailState = false;
+      emailValidated = false;
+    } else if (validateEmail == null) {
+      emailState = true;
+      emailValidated = true;
+    } else {
+      emailValidated = true;
+      emailState = false;
     }
-    nameValidated = true;
-    return validateName;
+    return validateEmail;
   }
 
   String? validatePassword(String? password) {
     final validatePassword = _validatorHelber.validatePassword(password);
     if (validatePassword == null) {
-      passState = true.obs;
+      passState = true;
     }
     passValidated = true;
     return validatePassword;
@@ -135,6 +132,6 @@ class LoginController extends GetxController {
 
   @override
   String toString() {
-    return 'LoginController{ _firstName: ${nameController.value},_email: ${emailController.value}, _password: ${passwordController.value}}';
+    return 'LoginController{ _email: ${emailController.value}, _password: ${passwordController.value}}';
   }
 }

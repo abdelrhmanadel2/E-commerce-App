@@ -17,7 +17,7 @@ class ResponseModel {
         message: json["message"]  ?? "",
         status: json["status"]  ?? false,
         isAuthorize: json["isAuthorize"] ?? true,
-        totalRecords: json["totalRecords"] ,
+        totalRecords: json["totalRecords"] ??0,
         data: json["data"],
       );
 }
