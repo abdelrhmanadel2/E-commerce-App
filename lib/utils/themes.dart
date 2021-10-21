@@ -17,7 +17,7 @@ class Themes {
       //       MaterialStateProperty.all(lightColorScheme.onBackground),
       // )),
       indicatorColor: kSuccessColor,
-
+      dividerColor: kGrayColor,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(10),
@@ -75,6 +75,7 @@ class Themes {
       //         borderRadius: BorderRadius.all(Radius.circular(25.0.r)))),
       //   ),
       // ),
+      dividerColor: kDarkGrayColor,
       hintColor: kDarkGrayColor,
       indicatorColor: kDarkSuccessColor,
       elevatedButtonTheme: ElevatedButtonThemeData(

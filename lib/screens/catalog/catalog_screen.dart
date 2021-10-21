@@ -1,7 +1,10 @@
+import 'package:ecommerce_app/models/product_model.dart';
 import 'package:ecommerce_app/screens/catalog/catalog_controller.dart';
 import 'package:ecommerce_app/utils/translation_key.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
+import 'package:ecommerce_app/widgets/item_cell.dart';
+import 'package:ecommerce_app/widgets/row_product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -142,15 +145,20 @@ class CatalogScreen extends StatelessWidget {
                                     top: 16, right: 16, left: 16),
                                 crossAxisCount: 2,
                                 itemCount: controller.productList.length,
-                                itemBuilder: (context, int index) => Container(
-                                  color: Colors.deepOrange,
-                                  height: 200,
-                                  child: Center(child: Text("$index")),
-                                ),
+                                itemBuilder: (context, int index) {
+                                  ProductModel product =
+                                      controller.productList[index];
+
+                                  return RowProductCard(
+                                    product: product,
+                                    isGrid: controller.isGrid.value,
+                                  );
+                                },
                                 staggeredTileBuilder: (int index) =>
-                                    StaggeredTile.count(
-                                        controller.isGrid.value ? 1 : 2, 1),
-                                mainAxisSpacing: 16.0,
+                                    StaggeredTile.extent(
+                                        controller.isGrid.value ? 1 : 2,
+                                        controller.isGrid.value ? 280 : 104),
+                                mainAxisSpacing: 26.0,
                                 crossAxisSpacing: 16.0,
                               )
                             : Center(

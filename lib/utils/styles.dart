@@ -29,6 +29,18 @@ class Styles {
         fontWeight: FontWeight.w700,
         fontSize: 34.sp,
       ));
+  static final kTextStyleitemHeadline = extend(
+      kTextStyleRegular,
+      TextStyle(
+        fontWeight: FontWeight.w700,
+        fontSize: 16.sp,
+      ));
+  static final kTextStyleMassiveHeadline = extend(
+      kTextStyleRegular,
+      TextStyle(
+        fontWeight: FontWeight.w700,
+        fontSize: 48.sp,
+      ));
   static final kTextStyleSubheads = extend(
       kTextStyleRegular,
       const TextStyle(

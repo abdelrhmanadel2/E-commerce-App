@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 import 'package:meta/meta.dart';
 
@@ -10,23 +9,22 @@ String productModelToJson(List<ProductModel> data) =>
 
 class ProductModel {
   ProductModel({
-    @required this.id,
-    @required this.title,
-    @required this.price,
-    @required this.description,
-    @required this.category,
-    @required this.image,
-    @required this.rating,
+    required this.id,
+    required this.title,
+    required this.price,
+    this.description,
+    this.category = "",
+    this.image = "images/Thrift shop-rafiki.png",
+    this.rating,
   });
 
-  int? id;
-  String? title;
-  double? price;
+  int id;
+  String title;
+  double price;
   String? description;
-  String? category;
-  String? image;
+  String category;
+  String image;
   Rating? rating;
-
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
         id: json["id"],
         title: json["title"],
@@ -50,12 +48,12 @@ class ProductModel {
 
 class Rating {
   Rating({
-    @required this.rate,
-    @required this.count,
+    this.rate = 0,
+    this.count = 0,
   });
 
-  double? rate;
-  int? count;
+  double rate;
+  int count;
 
   factory Rating.fromJson(Map<String, dynamic> json) => Rating(
         rate: json["rate"].toDouble(),
