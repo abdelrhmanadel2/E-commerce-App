@@ -10,6 +10,10 @@ class Styles {
       kTextStyleRegular,
       TextStyle(
         fontSize: 14.sp,
+      ));static final kTextStyleSmallDescription = extend(
+      kTextStyleRegular,
+      TextStyle(
+        fontSize: 8.sp,
       ));
   static final kTextStyleDescriptive = extend(
       kTextStyleDescription,
