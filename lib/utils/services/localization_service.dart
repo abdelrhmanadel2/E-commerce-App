@@ -13,6 +13,15 @@ class SupportedLocales {
 class LocalizationService extends GetxService {
   Locale get activeLocale => Get.find<StorageService>().activeLocale;
 
+   detectLang(){
+    String s;
+    if (Get.find<StorageService>().activeLocale == SupportedLocales.arabic) {
+      s = "ar";
+    } else {
+      s = "en";
+    }
+    return s;
+  }
   void toggleLocale() {
     final Locale newLocale =
         Get.find<StorageService>().activeLocale == SupportedLocales.arabic

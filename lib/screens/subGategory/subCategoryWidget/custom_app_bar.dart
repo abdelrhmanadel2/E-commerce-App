@@ -40,14 +40,17 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       )
           : Container(),
       bottom:  TabBar(//Add tab bar to title
+
         indicator: BoxDecoration(
             border: Border(bottom: BorderSide(color: kPrimaryColor,width: 2.0)),
+
             ),
         labelColor: kBlackColor,
         labelStyle: extend(
             Styles.kTextStyleHeadline3, TextStyle(color: theme.accentColor)),
         unselectedLabelColor: kBlackColor,
         isScrollable: false,
+        enableFeedback: true,
         tabs: [
           Tab(text: "Women",),
           Tab(text: "Men",),

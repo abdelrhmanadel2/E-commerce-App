@@ -1,14 +1,13 @@
+import 'package:ecommerce_app/screens/subGategory/subCategoryWidget/category_cell.dart';
 import 'package:ecommerce_app/screens/subGategory/subCategoryWidget/custom_app_bar.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/utils.dart';
-
+import 'package:ecommerce_app/utils/services/storage_service.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 class SubCategory extends StatelessWidget {
   const SubCategory({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -67,46 +66,8 @@ class SubCategory extends StatelessWidget {
                     ),
 
                   ),
-                ),Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 8),
-                  child: Container(
-                    height: 100,
-                    width: Get.width*0.88,
-                    decoration: const BoxDecoration(
-                      color: kWhiteColor,
-                      borderRadius: BorderRadius.all(
-                          Radius.circular(10)
-                      ),
-
-                  ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Text(
-                            "New",
-                            textAlign: TextAlign.left,
-                            style:extend(Styles.kTextStyleHeadline3, const TextStyle(color: kBlackColor)),
-                          ),
-                        ),
-                        Container(
-                      height: 100,
-                      width: Get.width*0.85/2,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            bottomLeft: Radius.circular(10)
-                        ),
-                        ),
-                          child: Image.asset("assets/images/shoesCategory.png",fit: BoxFit.fill,),
-                        ),
-
-                      ],
-                    ),
-                  ),
                 ),
+                    CategoryCell(title: 'New',onPressed: (){print("hii");}, imagePath: 'assets/images/shoesCategory.png',),
                   ],
                 ),
               ),
