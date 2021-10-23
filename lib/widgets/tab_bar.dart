@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/screens/catalog/catalog_screen.dart';
 import 'package:ecommerce_app/screens/home/home_screen.dart';
 import 'package:ecommerce_app/screens/home_page.dart';
 import 'package:ecommerce_app/screens/mainCategory/main_catetgories.dart';
@@ -28,7 +29,7 @@ class _CustomWidgetExampleState extends State<CustomWidgetExample> {
 
   List<Widget> _buildScreens() {
     return [
-      homeScreen(),mainCategory(),SubCategory(),homeScreen(),HomePage(),
+      homeScreen(),mainCategory(),SubCategory(),CatalogScreen(),HomePage(),
     ];
   }
 
