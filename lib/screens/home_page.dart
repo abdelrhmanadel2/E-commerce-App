@@ -1,3 +1,5 @@
+import 'package:ecommerce_app/screens/catalog/catalog_screen.dart';
+import 'package:ecommerce_app/screens/loginScreen/login_screen.dart';
 import 'package:ecommerce_app/screens/signupScreen/signup_screen.dart';
 import 'package:ecommerce_app/services/theme_service.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
@@ -5,6 +7,7 @@ import 'package:ecommerce_app/utils/translation_key.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
 import 'package:ecommerce_app/widgets/button.dart';
 import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
+import 'package:ecommerce_app/widgets/input_field_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,10 +35,11 @@ class HomePage extends StatelessWidget {
                 color: theme.accentColor,
               ))
         ],
-        title: "jhiiiiii",
+        title: signUp.tr,
       ),
       body: SingleChildScrollView(
-        physics: ClampingScrollPhysics(),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        physics: const ClampingScrollPhysics(),
         child: Column(
           children: [
             const Icon(Icons.add_a_photo_sharp),
@@ -50,13 +54,22 @@ class HomePage extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              child: Text(
+              child: const Text(
                 'Change Theme',
               ),
               onPressed: () {
                 Get.to(() => SignupScreen());
               },
             ),
+            ElevatedButton(
+              child: const Text(
+                ' women\'s clothing',
+              ),
+              onPressed: () {
+                Get.to(() => CatalogScreen(title: " women's clothing"));
+              },
+            ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -188,6 +201,8 @@ class HomePage extends StatelessWidget {
                 print("1");
               },
             ),
+            const SizedBox(height: 15),
+            const SizedBox(height: 70)
           ],
         ),
       ),

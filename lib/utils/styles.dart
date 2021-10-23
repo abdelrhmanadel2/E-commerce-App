@@ -18,6 +18,7 @@ class Styles {
   static final kTextStyleDescriptive = extend(
       kTextStyleDescription,
       const TextStyle(
+        fontSize: 14,
         fontWeight: FontWeight.w500,
       ));
   static final kTextStyleHelperText = extend(
@@ -66,6 +67,7 @@ class Styles {
     headline6: kTextStyleHeadline3,
     subtitle1: kTextStyleSubheads,
     button: kTextStyleDescriptive,
+    caption: kTextStyleHelperText,
     overline: kTextStyleHelperText,
     bodyText1: kTextStyleRegular,
     bodyText2: kTextStyleDescription,

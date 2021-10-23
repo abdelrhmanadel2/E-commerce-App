@@ -1,5 +1,5 @@
-import 'package:ecommerce_app/screens/loginScreen/login_screen.dart';
-import 'package:ecommerce_app/screens/signupScreen/signup_controller.dart';
+import 'package:ecommerce_app/screens/ForgotPasswordScreen/forgot_password_screen.dart';
+import 'package:ecommerce_app/screens/loginScreen/login_controller.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
 import 'package:ecommerce_app/utils/translation_key.dart';
@@ -9,15 +9,16 @@ import 'package:ecommerce_app/widgets/input_field_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/services.dart';
 
-class SignupScreen extends StatelessWidget {
+class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
         appBar: const AppBarWidget(),
-        body: GetBuilder<SignupController>(
-            init: SignupController(),
+        body: GetBuilder<LoginController>(
+            init: LoginController(),
             builder: (controller) => SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -35,23 +36,7 @@ class SignupScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 75.h),
                           CustomInputfield(
-                            onchange: controller.onNameupdate,
-                            labelText: "Name".tr,
-                            controller: controller.nameController,
-                            validator: controller.validateName,
-                            icon: (controller.nameValidated)
-                                ? (controller.nameState)
-                                    ? const Icon(Icons.check_rounded,
-                                        color: kSuccessColor)
-                                    : const Icon(
-                                        Icons.close_outlined,
-                                        color: kErrorColor,
-                                      )
-                                : null,
-                          ),
-                          SizedBox(height: 8.h),
-                          CustomInputfield(
-                            onchange: controller.onEmailUpdate,
+                            onchange: controller.onUpdate,
                             labelText: "Email".tr,
                             controller: controller.emailController,
                             validator: controller.validateEmail,
@@ -70,6 +55,7 @@ class SignupScreen extends StatelessWidget {
                               labelText: "Password".tr,
                               controller: controller.passwordController,
                               validator: controller.validatePassword,
+                              validated: controller.passValidated,
                               isAutoValidate: true,
                               obsecure: !controller.visiblePsd,
                               keyboardType: TextInputType.visiblePassword,
@@ -103,12 +89,13 @@ class SignupScreen extends StatelessWidget {
                             children: [
                               InkWell(
                                   onTap: () {
-                                    Get.to(LoginScreen());
+                                    Get.off(() => ForgotPasswordScreen());
+                                    // Get.to(() => ForgotPasswordScreen());
                                   },
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      Text("HaveAcount".tr),
+                                      Text("FORGOTPASSWORD".tr),
                                       SizedBox(width: 4.w),
                                       Icon(
                                         Get.find<LocalizationService>()
@@ -128,14 +115,14 @@ class SignupScreen extends StatelessWidget {
                                 width: 343,
                                 height: 48,
                                 onPressed: () {},
-                                text: "SIGN UP"),
+                                text: "LOGIN"),
                           ),
                           SizedBox(height: 126.r),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                "Or sign up with social accoint",
+                                "Or login with social accoint",
                                 textAlign: TextAlign.center,
                               ),
                               SizedBox(height: 12.h),

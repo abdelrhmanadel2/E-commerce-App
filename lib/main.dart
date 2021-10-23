@@ -9,9 +9,17 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   await GetStorage.init();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight
+  ]);
+
   await Get.putAsync(() => StorageService.init(), permanent: true);
   Get.put(LocalizationService(), permanent: true);
   Get.put(ThemeService(), permanent: true);
@@ -19,6 +27,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+ 
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

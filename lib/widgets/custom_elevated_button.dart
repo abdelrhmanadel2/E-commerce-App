@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton(
@@ -21,12 +22,19 @@ class CustomElevatedButton extends StatelessWidget {
   final onPressed;
   final background;
   final bool circle;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
-          fixedSize: MaterialStateProperty.all(Size(width.r, height.r)),
-          backgroundColor: MaterialStateProperty.all(background),
+          splashFactory: InkSplash.splashFactory,
+          fixedSize: MaterialStateProperty.all(Size(width.w, height.h)),
+          backgroundColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.pressed)) {
+              return Colors.red;
+            }
+            return background;
+          }),
           foregroundColor: MaterialStateProperty.all(forground),
           shape:
               circle ? MaterialStateProperty.all(const CircleBorder()) : null),
