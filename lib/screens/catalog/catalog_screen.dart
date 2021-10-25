@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/models/product_model.dart';
 import 'package:ecommerce_app/screens/catalog/catalog_controller.dart';
+import 'package:ecommerce_app/screens/productscreen/product_details.dart';
 import 'package:ecommerce_app/utils/translation_key.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
