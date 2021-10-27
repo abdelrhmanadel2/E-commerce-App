@@ -159,8 +159,102 @@ class ProductDetatilsScreen extends StatelessWidget {
                             const SizedBox(
                               height: 20,
                             ),
-                          
-                          
+                            ExpansionTile(
+                              collapsedBackgroundColor: theme.backgroundColor,
+                              backgroundColor: theme.backgroundColor,
+                              iconColor: theme.dividerColor,
+                              collapsedIconColor: theme.dividerColor,
+                              textColor: Colors.black,
+                              title: Text(
+                                'Item details',
+                                style: theme.textTheme.bodyText1,
+                              ),
+                              children: <Widget>[
+                                Divider(
+                                  height: 1,
+                                  color: theme.dividerColor,
+                                ),
+                                Container(
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            right: 11,
+                                            left: 25,
+                                            top: 11,
+                                            bottom: 7),
+                                        child: Text(
+                                          'Short dress in soft cotton jersey with decorative buttons down the front and a wide, frill-trimmed square neckline with concealed elastication. Elasticated seam under the bust and short puff sleeves with a small frill trim.',
+                                          style: theme.textTheme.bodyText2,
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            ExpansionTile(
+                              collapsedBackgroundColor: theme.backgroundColor,
+                              backgroundColor: theme.backgroundColor,
+                              iconColor: theme.dividerColor,
+                              collapsedIconColor: theme.dividerColor,
+                              textColor: Colors.black,
+                              title: Text(
+                                'Item details',
+                                style: theme.textTheme.bodyText1,
+                              ),
+                              children: <Widget>[
+                                Divider(
+                                  height: 1,
+                                  color: theme.dividerColor,
+                                ),
+                                Container(
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            right: 11,
+                                            left: 25,
+                                            top: 11,
+                                            bottom: 7),
+                                        child: Text(
+                                          'Short dress in soft cotton jersey with decorative buttons down the front and a wide, frill-trimmed square neckline with concealed elastication. Elasticated seam under the bust and short puff sleeves with a small frill trim.',
+                                          style: theme.textTheme.bodyText2,
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            ExpansionTile(
+                              collapsedBackgroundColor: theme.backgroundColor,
+                              backgroundColor: theme.backgroundColor,
+                              iconColor: theme.dividerColor,
+                              collapsedIconColor: theme.dividerColor,
+                              textColor: Colors.black,
+                              title: Text(
+                                'Item details',
+                                style: theme.textTheme.bodyText1,
+                              ),
+                              children: <Widget>[
+                                Divider(
+                                  height: 1,
+                                  color: theme.dividerColor,
+                                ),
+                                Container(
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            right: 11,
+                                            left: 25,
+                                            top: 11,
+                                            bottom: 7),
+                                        child: Text(
+                                          'Short dress in soft cotton jersey with decorative buttons down the front and a wide, frill-trimmed square neckline with concealed elastication. Elasticated seam under the bust and short puff sleeves with a small frill trim.',
+                                          style: theme.textTheme.bodyText2,
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            )
                           ],
                         ),
                       )
