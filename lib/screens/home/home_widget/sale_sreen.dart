@@ -17,8 +17,10 @@ class _saleScreenState
     extends State<saleScreen> {
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
-      backgroundColor: kWhiteColor,
+      backgroundColor: theme.colorScheme.primary,
       body: Column(
         children: <Widget>[
           Stack(

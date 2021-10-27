@@ -17,7 +17,6 @@ class _mainCategoryState extends State<mainCategory> {
   Widget build(BuildContext context) {
     var hieght = Get.height - MediaQuery.of(context).padding.bottom;
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(index: 1,),
       body: Container(
         color: kWhiteColor,
         height: double.infinity,

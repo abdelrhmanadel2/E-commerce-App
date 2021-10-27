@@ -21,8 +21,7 @@ class _homeScreenState extends State<homeScreen> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(index: 0,),
-      backgroundColor: kWhiteColor,
+      backgroundColor: theme.colorScheme.primary,
       body: Stack(
         children: <Widget>[
           Image.asset(
