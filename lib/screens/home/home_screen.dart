@@ -1,9 +1,9 @@
+import 'package:ecommerce_app/screens/mainCategory/main_catetgories.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
 import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
-import 'package:ecommerce_app/widgets/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -81,9 +81,9 @@ class _homeScreenState extends State<homeScreen> {
                             text: "check"),
                       ),
                       Container(
-                        color: theme.colorScheme.primary,
+                        color: theme.primaryColor,
                         width: Get.width,
-                        height: Get.height * 0.64,
+                        height: Get.height * 0.62,
                         child: Padding(
                           padding:
                               const EdgeInsets.fromLTRB(15.0, 33.0, 15.0, 0.0),
@@ -110,8 +110,8 @@ class _homeScreenState extends State<homeScreen> {
                                             textAlign: TextAlign.left,
                                             style: extend(
                                                 Styles.kTextStyleHeadline,
-                                                 TextStyle(
-                                                    color: theme.colorScheme.onBackground)),
+                                                const TextStyle(
+                                                    color: kBlackColor)),
                                           ),
                                         ),
                                         Padding(
@@ -136,8 +136,8 @@ class _homeScreenState extends State<homeScreen> {
                                         textAlign: TextAlign.left,
                                         style: extend(
                                             Styles.kTextStyleDescription,
-                                             TextStyle(
-                                                color: theme.colorScheme.onBackground)),
+                                            const TextStyle(
+                                                color: kBlackColor)),
                                       ),
                                     ),
                                   ],
@@ -182,8 +182,8 @@ class _homeScreenState extends State<homeScreen> {
                                             textAlign: TextAlign.left,
                                             style: extend(
                                                 Styles.kTextStyleHeadline,
-                                                 TextStyle(
-                                                    color: theme.colorScheme.onBackground)),
+                                                const TextStyle(
+                                                    color: kBlackColor)),
                                           ),
                                         ),
                                         Padding(
@@ -194,8 +194,8 @@ class _homeScreenState extends State<homeScreen> {
                                             textAlign: TextAlign.left,
                                             style: extend(
                                                 Styles.kTextStyleDescription,
-                                                 TextStyle(
-                                                    color: theme.colorScheme.onBackground)),
+                                                const TextStyle(
+                                                    color: kGrayColor)),
                                           ),
                                         ),
                                       ],
@@ -208,8 +208,8 @@ class _homeScreenState extends State<homeScreen> {
                                         textAlign: TextAlign.left,
                                         style: extend(
                                             Styles.kTextStyleDescription,
-                                             TextStyle(
-                                                color: theme.colorScheme.onBackground)),
+                                            const TextStyle(
+                                                color: kBlackColor)),
                                       ),
                                     ),
                                   ],
