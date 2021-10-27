@@ -22,6 +22,7 @@ class _homeScreenState extends State<homeScreen> {
 
     return Scaffold(
       backgroundColor: theme.colorScheme.primary,
+
       body: Stack(
         children: <Widget>[
           Image.asset(

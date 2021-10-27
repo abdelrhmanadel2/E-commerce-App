@@ -47,7 +47,6 @@ class MyApp extends StatelessWidget {
               darkTheme: Themes.darkTheme,
               themeMode: Get.find<ThemeService>().theme,
               home: CustomWidgetExample(menuScreenContext: context,),
-
             ));
   }
 }
