@@ -10,11 +10,11 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
   const AppBarWidget({
     Key? key,
-
     this.title,
     this.hasBackButton = true,
     this.hasElevation = true,
-    this.actions, this.tabBar=false,
+    this.actions,
+    this.tabBar = false,
   }) : super(key: key);
 
   @override
@@ -26,44 +26,51 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: hasElevation ? 1 : 0,
       centerTitle: true,
-      backgroundColor:  theme.backgroundColor,
+      backgroundColor: theme.backgroundColor,
       actions: actions,
       leading: hasBackButton
           ? IconButton(
-        onPressed: () {
-          Get.back();
-        },
-        icon: Icon(
-          Icons.arrow_back_ios,
-          color:  theme.accentColor,
-        ),
-      )
+              onPressed: () {
+                Get.back();
+              },
+              icon: Icon(
+                Icons.arrow_back_ios,
+                color: theme.accentColor,
+              ),
+            )
           : Container(),
-      bottom:  TabBar(//Add tab bar to title
+      bottom: tabBar
+          ? TabBar(
+              //Add tab bar to title
 
-        indicator: BoxDecoration(
-            border: Border(bottom: BorderSide(color: kPrimaryColor,width: 2.0)),
-
-            ),
-        labelColor: kBlackColor,
-        labelStyle: extend(
-            Styles.kTextStyleHeadline3, TextStyle(color: theme.accentColor)),
-        unselectedLabelColor: kBlackColor,
-        isScrollable: false,
-        enableFeedback: true,
-        tabs: [
-          Tab(text: "Women",),
-          Tab(text: "Men",),
-          Tab(text: "Kids",),
-        ],
-      ),
+              indicator: BoxDecoration(
+                border: Border(
+                    bottom: BorderSide(color: kPrimaryColor, width: 2.0)),
+              ),
+              labelColor: kBlackColor,
+              labelStyle: extend(Styles.kTextStyleHeadline3,
+                  TextStyle(color: theme.accentColor)),
+              unselectedLabelColor: kBlackColor,
+              isScrollable: false,
+              enableFeedback: true,
+              tabs: [
+                Tab(
+                  text: "Women",
+                ),
+                Tab(
+                  text: "Men",
+                ),
+                Tab(
+                  text: "Kids",
+                ),
+              ],
+            )
+          : null,
       title: Text(
-        title??"",
-        style:extend(
+        title ?? "",
+        style: extend(
             Styles.kTextStyleHeadline3, TextStyle(color: theme.accentColor)),
       ),
-
-
     );
   }
 

@@ -1,8 +1,10 @@
 import 'package:ecommerce_app/models/product_model.dart';
+import 'package:ecommerce_app/screens/productscreen/product_details.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get.dart';
 
 class RowProductCard extends StatelessWidget {
   const RowProductCard({Key? key, required this.product, this.isGrid = false})
@@ -97,21 +99,22 @@ class RowProductCard extends StatelessWidget {
             ]),
       ),
       Positioned(
-        bottom: isGrid ? 60 : -20,
-        right: -10,
-        child: CustomElevatedButton(
-          width: 36,
-          height: 36,
-          circle: true,
-          background: theme.colorScheme.surface,
-          icon: Icon(
-            Icons.favorite_border,
-            size: 12,
-          ),
-          forground: theme.dividerColor,
-          onPressed: () {},
-        ),
-      )
+          bottom: isGrid ? 60 : -20,
+          right: -10,
+          child: CustomElevatedButton(
+              width: 36,
+              height: 36,
+              circle: true,
+              background: theme.colorScheme.surface,
+                 forground: theme.dividerColor,
+              icon: Icon(
+                Icons.favorite_border,
+                size: 12,
+              ),
+           
+              onPressed: () {
+                Get.to(() => ProductDetatilsScreen());
+              })),
     ]);
   }
 }

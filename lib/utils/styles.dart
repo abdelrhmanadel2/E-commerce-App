@@ -10,15 +10,16 @@ class Styles {
       kTextStyleRegular,
       TextStyle(
         fontSize: 14.sp,
-      ));static final kTextStyleSmallDescription = extend(
+      ));
+  static final kTextStyleSmallDescription = extend(
       kTextStyleRegular,
       TextStyle(
         fontSize: 8.sp,
       ));
   static final kTextStyleDescriptive = extend(
       kTextStyleDescription,
-      const TextStyle(
-        fontSize: 14,
+      TextStyle(
+        fontSize: 14.sp,
         fontWeight: FontWeight.w500,
       ));
   static final kTextStyleHelperText = extend(

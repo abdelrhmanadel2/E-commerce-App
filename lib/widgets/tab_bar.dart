@@ -7,10 +7,10 @@ import 'package:ecommerce_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
-
 class CustomWidgetExample extends StatefulWidget {
   final BuildContext menuScreenContext;
-  CustomWidgetExample({Key? key, required this.menuScreenContext}) : super(key: key);
+  CustomWidgetExample({Key? key, required this.menuScreenContext})
+      : super(key: key);
 
   @override
   _CustomWidgetExampleState createState() => _CustomWidgetExampleState();
@@ -29,7 +29,11 @@ class _CustomWidgetExampleState extends State<CustomWidgetExample> {
 
   List<Widget> _buildScreens() {
     return [
-      homeScreen(),mainCategory(),SubCategory(),CatalogScreen(),HomePage(),
+      homeScreen(),
+      mainCategory(),
+      SubCategory(),
+      CatalogScreen(),
+      HomePage(),
     ];
   }
 
@@ -98,6 +102,7 @@ class _CustomWidgetExampleState extends State<CustomWidgetExample> {
     );
   }
 }
+
 class CustomNavBarWidget extends StatelessWidget {
   final int selectedIndex;
   final List<PersistentBottomNavBarItem> items;
@@ -124,11 +129,11 @@ class CustomNavBarWidget extends StatelessWidget {
                   size: 26.0,
                   color: isSelected
                       ? (item.activeColorSecondary == null
-                      ? item.activeColorPrimary
-                      : item.activeColorSecondary)
+                          ? item.activeColorPrimary
+                          : item.activeColorSecondary)
                       : item.inactiveColorPrimary == null
-                      ? item.activeColorPrimary
-                      : item.inactiveColorPrimary),
+                          ? item.activeColorPrimary
+                          : item.inactiveColorPrimary),
               child: isSelected ? item.icon : item.inactiveIcon ?? item.icon,
             ),
           ),
@@ -138,16 +143,16 @@ class CustomNavBarWidget extends StatelessWidget {
               type: MaterialType.transparency,
               child: FittedBox(
                   child: Text(
-                    item.title??"",
-                    style: TextStyle(
-                        color: isSelected
-                            ? (item.activeColorSecondary == null
+                item.title ?? "",
+                style: TextStyle(
+                    color: isSelected
+                        ? (item.activeColorSecondary == null
                             ? item.activeColorPrimary
                             : item.activeColorSecondary)
-                            : item.inactiveColorPrimary,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12.0),
-                  )),
+                        : item.inactiveColorPrimary,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.0),
+              )),
             ),
           )
         ],
@@ -157,8 +162,9 @@ class CustomNavBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
-      color: Colors.white,
+      color: theme.primaryColor,
       child: Container(
         width: double.infinity,
         height: kBottomNavigationBarHeight,
