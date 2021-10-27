@@ -1,16 +1,23 @@
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/utils.dart';
+import 'package:ecommerce_app/widgets/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-class mainCategory extends StatelessWidget {
+class mainCategory extends StatefulWidget {
   const mainCategory({Key? key}) : super(key: key);
 
+  @override
+  State<mainCategory> createState() => _mainCategoryState();
+}
+
+class _mainCategoryState extends State<mainCategory> {
   @override
   Widget build(BuildContext context) {
     var hieght = Get.height - MediaQuery.of(context).padding.bottom;
     return Scaffold(
+      bottomNavigationBar: BottomNavBar(index: 1,),
       body: Container(
         color: kWhiteColor,
         height: double.infinity,

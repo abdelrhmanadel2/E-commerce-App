@@ -8,6 +8,7 @@ import 'package:ecommerce_app/widgets/app_bar.dart';
 import 'package:ecommerce_app/widgets/button.dart';
 import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
 import 'package:ecommerce_app/widgets/input_field_text.dart';
+import 'package:ecommerce_app/widgets/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,6 +18,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
+      bottomNavigationBar: BottomNavBar(index: 4,),
       appBar: AppBarWidget(
         hasBackButton: true,
         actions: [
