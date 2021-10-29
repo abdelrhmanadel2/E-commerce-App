@@ -25,7 +25,7 @@ class ProductDetatilsScreen extends StatelessWidget {
         ),
         bottomNavigationBar: Container(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-          color: Colors.white,
+          color: theme.backgroundColor,
           child: CustomElevatedButton(
             text: "Add to cart",
             height: 48,
