@@ -1,9 +1,9 @@
-import 'package:ecommerce_app/screens/mainCategory/main_catetgories.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
 import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
+import 'package:ecommerce_app/widgets/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -19,10 +19,9 @@ class _homeScreenState extends State<homeScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-
     return Scaffold(
+      bottomNavigationBar: BottomNavBar(index: 0,),
       backgroundColor: theme.colorScheme.primary,
-
       body: Stack(
         children: <Widget>[
           Image.asset(
@@ -111,8 +110,8 @@ class _homeScreenState extends State<homeScreen> {
                                             textAlign: TextAlign.left,
                                             style: extend(
                                                 Styles.kTextStyleHeadline,
-                                                const TextStyle(
-                                                    color: kBlackColor)),
+                                                 TextStyle(
+                                                    color: theme.colorScheme.onBackground)),
                                           ),
                                         ),
                                         Padding(
@@ -137,8 +136,8 @@ class _homeScreenState extends State<homeScreen> {
                                         textAlign: TextAlign.left,
                                         style: extend(
                                             Styles.kTextStyleDescription,
-                                            const TextStyle(
-                                                color: kBlackColor)),
+                                             TextStyle(
+                                                color: theme.colorScheme.onBackground)),
                                       ),
                                     ),
                                   ],
@@ -183,8 +182,8 @@ class _homeScreenState extends State<homeScreen> {
                                             textAlign: TextAlign.left,
                                             style: extend(
                                                 Styles.kTextStyleHeadline,
-                                                const TextStyle(
-                                                    color: kBlackColor)),
+                                                 TextStyle(
+                                                    color: theme.colorScheme.onBackground)),
                                           ),
                                         ),
                                         Padding(
@@ -209,8 +208,8 @@ class _homeScreenState extends State<homeScreen> {
                                         textAlign: TextAlign.left,
                                         style: extend(
                                             Styles.kTextStyleDescription,
-                                            const TextStyle(
-                                                color: kBlackColor)),
+                                             TextStyle(
+                                                color: theme.colorScheme.onBackground)),
                                       ),
                                     ),
                                   ],
