@@ -159,7 +159,7 @@ class CatalogScreen extends StatelessWidget {
                                 staggeredTileBuilder: (int index) =>
                                     StaggeredTile.extent(
                                         controller.isGrid.value ? 1 : 2,
-                                        controller.isGrid.value ? 280 : 104),
+                                        controller.isGrid.value ? 283 : 104),
                                 mainAxisSpacing: 26.0,
                                 crossAxisSpacing: 16.0,
                               )
