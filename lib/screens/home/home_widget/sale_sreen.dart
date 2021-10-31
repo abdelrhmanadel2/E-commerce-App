@@ -2,6 +2,7 @@ import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
 import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/utils.dart';
+import 'package:ecommerce_app/widgets/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,8 +18,10 @@ class _saleScreenState
     extends State<saleScreen> {
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: kWhiteColor,
+      bottomNavigationBar:  BottomNavBar(index: 0,),
+      backgroundColor: theme.colorScheme.primary,
       body: Column(
         children: <Widget>[
           Stack(

@@ -1,8 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart' hide Response, FormData;
-import 'package:ecommerce_app/models/response_model.dart';
-import 'package:ecommerce_app/utils/services/storage_service.dart';
 import 'package:ecommerce_app/utils/translation_key.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 

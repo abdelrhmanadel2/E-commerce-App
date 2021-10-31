@@ -1,10 +1,6 @@
 import 'package:ecommerce_app/models/product_model.dart';
 import 'package:ecommerce_app/screens/catalog/catalog_controller.dart';
-import 'package:ecommerce_app/screens/productscreen/product_details.dart';
-import 'package:ecommerce_app/utils/translation_key.dart';
-import 'package:ecommerce_app/utils/utils.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
-import 'package:ecommerce_app/widgets/item_cell.dart';
 import 'package:ecommerce_app/widgets/row_product_card.dart';
 import 'package:ecommerce_app/widgets/tab_bar.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +16,7 @@ class CatalogScreen extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Scaffold(
+      bottomNavigationBar: BottomNavBar(index: 3,),
         appBar: AppBarWidget(
           hasElevation: false,
           actions: [

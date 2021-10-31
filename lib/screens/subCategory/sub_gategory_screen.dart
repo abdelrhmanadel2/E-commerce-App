@@ -1,10 +1,10 @@
 import 'package:ecommerce_app/screens/catalog/catalog_screen.dart';
-import 'package:ecommerce_app/screens/subGategory/subCategoryWidget/category_cell.dart';
-import 'package:ecommerce_app/screens/subGategory/subCategoryWidget/custom_app_bar.dart';
+import 'package:ecommerce_app/screens/subCategory/subCategoryWidget/category_cell.dart';
+import 'package:ecommerce_app/screens/subCategory/subCategoryWidget/custom_app_bar.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/utils.dart';
-import 'package:ecommerce_app/utils/services/storage_service.dart';
+import 'package:ecommerce_app/widgets/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,6 +15,7 @@ class SubCategory extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        bottomNavigationBar: BottomNavBar(index: 2,),
         appBar: AppBarWidget(
           hasBackButton: true,
           actions: [

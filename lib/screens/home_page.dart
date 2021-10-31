@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/screens/catalog/catalog_screen.dart';
-import 'package:ecommerce_app/screens/loginScreen/login_screen.dart';
 import 'package:ecommerce_app/screens/signupScreen/signup_screen.dart';
 import 'package:ecommerce_app/services/theme_service.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
@@ -7,7 +6,7 @@ import 'package:ecommerce_app/utils/translation_key.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
 import 'package:ecommerce_app/widgets/button.dart';
 import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
-import 'package:ecommerce_app/widgets/input_field_text.dart';
+import 'package:ecommerce_app/widgets/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

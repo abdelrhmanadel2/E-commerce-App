@@ -1,4 +1,6 @@
+import 'package:ecommerce_app/screens/home/home_screen.dart';
 import 'package:ecommerce_app/services/theme_service.dart';
+import 'package:ecommerce_app/utils/services/app_routes.dart';
 import 'package:ecommerce_app/utils/services/localization_service.dart';
 import 'package:ecommerce_app/utils/services/storage_service.dart';
 import 'package:ecommerce_app/utils/themes.dart';
@@ -43,10 +45,11 @@ class MyApp extends StatelessWidget {
                 GlobalWidgetsLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,
               ],
+              getPages: AppRoutes.routes,
               theme: Themes.lightTheme,
               darkTheme: Themes.darkTheme,
               themeMode: Get.find<ThemeService>().theme,
-              home: CustomWidgetExample(menuScreenContext: context,),
+              home: homeScreen(),
             ));
   }
 }
