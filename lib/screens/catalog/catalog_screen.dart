@@ -22,7 +22,7 @@ class CatalogScreen extends StatelessWidget {
         appBar: AppBarWidget(
           hasElevation: false,
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.search_off_rounded))
+            IconButton(onPressed: () {}, icon: const Icon(Icons.search_rounded))
           ],
         ),
         body: GetBuilder<CatalogController>(
@@ -58,7 +58,7 @@ class CatalogScreen extends StatelessWidget {
                                         theme.colorScheme.onSurface,
                                     label: Container(
                                       constraints:
-                                          BoxConstraints(minWidth: 100),
+                                          const BoxConstraints(minWidth: 100),
                                       child: Text(
                                         "T-Shirts",
                                         style: theme.textTheme.button!.apply(
@@ -96,11 +96,11 @@ class CatalogScreen extends StatelessWidget {
                                               theme.accentColor),
                                     ),
                                     onPressed: () {},
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.filter_list_rounded,
                                       // size: 24,
                                     ),
-                                    label: Text("Filter")),
+                                    label: const Text("Filter")),
                                 TextButton.icon(
                                     style: ButtonStyle(
                                       padding: MaterialStateProperty.all(
@@ -115,11 +115,11 @@ class CatalogScreen extends StatelessWidget {
                                               theme.accentColor),
                                     ),
                                     onPressed: () {},
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.filter_list_rounded,
                                       // size: 24,
                                     ),
-                                    label: Text("Price: lowest to high")),
+                                    label: const Text("Price: lowest to high")),
                                 IconButton(
                                   padding: EdgeInsets.zero,
                                   onPressed: controller.togelGrid,
@@ -162,7 +162,7 @@ class CatalogScreen extends StatelessWidget {
                                 mainAxisSpacing: 26.0,
                                 crossAxisSpacing: 16.0,
                               )
-                            : Center(
+                            : const Center(
                                 child: CircularProgressIndicator(
                                   color: Colors.amber,
                                 ),
