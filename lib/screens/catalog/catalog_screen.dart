@@ -16,11 +16,13 @@ class CatalogScreen extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(index: 3,),
+        bottomNavigationBar: BottomNavBar(
+          index: 2,
+        ),
         appBar: AppBarWidget(
           hasElevation: false,
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.search_rounded))
+            IconButton(onPressed: () {}, icon: Icon(Icons.search_off_rounded))
           ],
         ),
         body: GetBuilder<CatalogController>(

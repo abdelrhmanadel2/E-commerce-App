@@ -15,7 +15,9 @@ class SubCategory extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        bottomNavigationBar: BottomNavBar(index: 2,),
+        bottomNavigationBar: BottomNavBar(
+          index: 2,
+        ),
         appBar: AppBarWidget(
           hasBackButton: true,
           actions: [
@@ -24,7 +26,7 @@ class SubCategory extends StatelessWidget {
                   print("hi");
                 },
                 icon: Icon(
-                  Icons.zoom_out_sharp,
+                  Icons.search,
                   color: kBlackColor,
                 ))
           ],

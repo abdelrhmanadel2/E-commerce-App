@@ -20,7 +20,9 @@ class _homeScreenState extends State<homeScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(index: 0,),
+      bottomNavigationBar: BottomNavBar(
+        index: 0,
+      ),
       backgroundColor: theme.colorScheme.primary,
       body: Stack(
         children: <Widget>[
@@ -110,8 +112,9 @@ class _homeScreenState extends State<homeScreen> {
                                             textAlign: TextAlign.left,
                                             style: extend(
                                                 Styles.kTextStyleHeadline,
-                                                 TextStyle(
-                                                    color: theme.colorScheme.onBackground)),
+                                                TextStyle(
+                                                    color: theme.colorScheme
+                                                        .onBackground)),
                                           ),
                                         ),
                                         Padding(
@@ -136,8 +139,9 @@ class _homeScreenState extends State<homeScreen> {
                                         textAlign: TextAlign.left,
                                         style: extend(
                                             Styles.kTextStyleDescription,
-                                             TextStyle(
-                                                color: theme.colorScheme.onBackground)),
+                                            TextStyle(
+                                                color: theme
+                                                    .colorScheme.onBackground)),
                                       ),
                                     ),
                                   ],
@@ -182,8 +186,9 @@ class _homeScreenState extends State<homeScreen> {
                                             textAlign: TextAlign.left,
                                             style: extend(
                                                 Styles.kTextStyleHeadline,
-                                                 TextStyle(
-                                                    color: theme.colorScheme.onBackground)),
+                                                TextStyle(
+                                                    color: theme.colorScheme
+                                                        .onBackground)),
                                           ),
                                         ),
                                         Padding(
@@ -208,8 +213,9 @@ class _homeScreenState extends State<homeScreen> {
                                         textAlign: TextAlign.left,
                                         style: extend(
                                             Styles.kTextStyleDescription,
-                                             TextStyle(
-                                                color: theme.colorScheme.onBackground)),
+                                            TextStyle(
+                                                color: theme
+                                                    .colorScheme.onBackground)),
                                       ),
                                     ),
                                   ],
