@@ -1,3 +1,5 @@
+import 'package:ecommerce_app/screens/catalog/catalog_screen.dart';
+import 'package:ecommerce_app/screens/subCategory/sub_gategory_screen.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/utils.dart';
@@ -10,11 +12,12 @@ class MainCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var hieght = Get.height - MediaQuery.of(context).padding.bottom;
+    final theme = Theme.of(context);
+    var hieght = Get.height - MediaQuery.of(context).padding.bottom + 17.6;
     return Scaffold(
       bottomNavigationBar: BottomNavBar(index: 1,),
       body: Container(
-        color: kWhiteColor,
+        color: theme.colorScheme.background,
         height: double.infinity,
         width: double.infinity,
         child: Column(
@@ -39,60 +42,102 @@ class MainCategory extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Container(
-                      alignment: Alignment.center,
-                      color: kWhiteColor,
-                      width: Get.width*0.5,
-                      height: hieght*0.25,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                    GestureDetector(
+                      onTap: (){
+                        Get.to(() => CatalogScreen(
+                          title: "Summer Sales",
+                        ));
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        color: theme.colorScheme.primary,
+                        width: Get.width*0.5,
+                        height: hieght*0.25,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Summer",
+                              textAlign: TextAlign.left,
+                              style:extend(Styles.kTextStyleHeadline, const TextStyle(color: kPrimaryColor)),
+                            ),
+                            Text(
+                              "Sale",
+                              textAlign: TextAlign.left,
+                              style:extend(Styles.kTextStyleHeadline, const TextStyle(color: kPrimaryColor)),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        Get.to(() => SubCategory(initialIndex: 0,));
+                      },
+                      child: Stack(
                         children: [
-                          Text(
-                            "Summer",
-                            textAlign: TextAlign.left,
-                            style:extend(Styles.kTextStyleHeadline, const TextStyle(color: kPrimaryColor)),
-                          ),
-                          Text(
-                            "Sale",
-                            textAlign: TextAlign.left,
-                            style:extend(Styles.kTextStyleHeadline, const TextStyle(color: kPrimaryColor)),
-                          ),
+                          Image.asset("assets/images/blackImage.png",width: Get.width*0.5,height: hieght*0.25,fit: BoxFit.fill,),
+                          Positioned(
+                            left: 0.0,
+                            bottom: 0.0,
+                            child:Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "Wommen",
+                                textAlign: TextAlign.left,
+                                style:extend(Styles.kTextStyleHeadline, const TextStyle(color: kWhiteColor)),
+                              ),
+                            ), ),
                         ],
                       ),
                     ),
-                    Stack(
-                      children: [
-                        Image.asset("assets/images/blackImage.png",width: Get.width*0.5,height: hieght*0.25,fit: BoxFit.fill,),
-                        Positioned(
-                          left: 0.0,
-                          bottom: 0.0,
-                          child:Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              "Wommen",
-                              textAlign: TextAlign.left,
-                              style:extend(Styles.kTextStyleHeadline, const TextStyle(color: kWhiteColor)),
-                            ),
-                          ), ),
-                      ],
-                    ),
                   ],
                 ),
-                Stack(
+                Column(
                   children: [
-                    Image.asset("assets/images/menHoodieImage.png",width: Get.width*0.5,height: hieght*0.5,fit: BoxFit.fill,),
-                    Positioned(
-                      left: 0.0,
-                      bottom: 0.0,
-                      child:Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "Mens",
-                          textAlign: TextAlign.left,
-                          style:extend(Styles.kTextStyleHeadline, const TextStyle(color: kWhiteColor)),
-                        ),
-                      ), ),
+                    GestureDetector(
+                      onTap: (){
+                        Get.to(() => SubCategory(initialIndex: 1,));
+                      },
+                      child: Stack(
+                        children: [
+                          Image.asset("assets/images/menHoodieImage.png",width: Get.width*0.5,height: hieght*0.25,fit: BoxFit.fill,),
+                          Positioned(
+                            left: 0.0,
+                            bottom: 0.0,
+                            child:Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "Mens",
+                                textAlign: TextAlign.left,
+                                style:extend(Styles.kTextStyleHeadline, const TextStyle(color: kWhiteColor)),
+                              ),
+                            ), ),
+                        ],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        Get.to(() => SubCategory(initialIndex: 2,));
+                      },
+                      child: Stack(
+                        children: [
+                          Image.asset("assets/images/images.jpg",width: Get.width*0.5,height: hieght*0.25,fit: BoxFit.fill,),
+                          Positioned(
+                            left: 0.0,
+                            bottom: 0.0,
+                            child:Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "kids",
+                                textAlign: TextAlign.left,
+                                style:extend(Styles.kTextStyleHeadline, const TextStyle(color: kWhiteColor)),
+                              ),
+                            ), ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ],

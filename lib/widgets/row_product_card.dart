@@ -107,7 +107,7 @@ class RowProductCard extends StatelessWidget {
               circle: true,
               background: theme.colorScheme.surface,
                  forground: theme.dividerColor,
-              icon: Icon(
+              icon: const Icon(
                 Icons.favorite_border,
                 size: 12,
               ),
