@@ -6,7 +6,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // ignore: avoid_classes_with_only_static_members
 class Themes {
   static ThemeData get lightTheme {
+
     return ThemeData.light().copyWith(
+
       // textButtonTheme: TextButtonThemeData(
       //     style: ButtonStyle(
       //   shadowColor:
@@ -41,6 +43,7 @@ class Themes {
             borderRadius: BorderRadius.all(Radius.circular(25.0.r)))),
       )),
       scaffoldBackgroundColor: kBackgroundColor,
+
       primaryColor: kWhiteColor,
       backgroundColor: kBackgroundColor,
       accentColor: kBlackColor,
@@ -62,6 +65,9 @@ class Themes {
 
   static ThemeData get darkTheme {
     return ThemeData.dark().copyWith(
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: darkColorScheme.surface,
+      ),
       // textButtonTheme: TextButtonThemeData(
       //   style: ButtonStyle(
       //     elevation: MaterialStateProperty.all(15),

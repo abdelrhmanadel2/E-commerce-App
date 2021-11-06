@@ -1,8 +1,9 @@
 import 'package:ecommerce_app/utils/colors.dart';
+import 'package:ecommerce_app/utils/services/localization_service.dart';
+import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ecommerce_app/utils/styles.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final title, hasBackButton, hasElevation, tabBar;
@@ -19,41 +20,38 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    var borderColor1 = kWhiteColor;
-    var borderColor2 = kWhiteColor;
-    var borderColor3 = kWhiteColor;
     final theme = Theme.of(context);
     return AppBar(
       elevation: hasElevation ? 1 : 0,
       centerTitle: true,
-      backgroundColor: theme.backgroundColor,
+      backgroundColor: theme.colorScheme.surface,
       actions: actions,
       leading: hasBackButton
           ? IconButton(
               onPressed: () {
-                Get.back();
+                Get.find<LocalizationService>().toggleLocale();
               },
               icon: Icon(
                 Icons.arrow_back_ios,
-                color: theme.accentColor,
+                color: theme.colorScheme.onBackground,
               ),
             )
           : Container(),
+
       bottom: tabBar
           ? TabBar(
               //Add tab bar to title
 
-              indicator: BoxDecoration(
+              indicator:  const BoxDecoration(
                 border: Border(
                     bottom: BorderSide(color: kPrimaryColor, width: 2.0)),
               ),
-              labelColor: kBlackColor,
+              labelColor: theme.colorScheme.onBackground,
               labelStyle: extend(Styles.kTextStyleHeadline3,
-                  TextStyle(color: theme.accentColor)),
-              unselectedLabelColor: kBlackColor,
-              isScrollable: false,
+                  TextStyle(color: theme.colorScheme.onBackground)),
+              unselectedLabelColor: theme.colorScheme.onBackground,
               enableFeedback: true,
-              tabs: [
+              tabs: const [
                 Tab(
                   text: "Women",
                 ),
@@ -75,5 +73,5 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size(double.infinity, 100);
+  Size get preferredSize => const Size(double.infinity, 100);
 }

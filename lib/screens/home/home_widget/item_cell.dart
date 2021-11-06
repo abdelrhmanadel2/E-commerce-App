@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/styles.dart';
 import 'package:ecommerce_app/utils/utils.dart';
@@ -48,11 +49,23 @@ class ItemCell extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10),
                   height: 190,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image.asset(
-                      imagePath,
-                      fit: BoxFit.cover,
+                  child: CachedNetworkImage(
+                    imageUrl: imagePath,
+                    imageBuilder: (context, imageProvider) => Container(
+                      height: 184,
+                      width: 148,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        image: DecorationImage(
+                          image: imageProvider,
+
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+                    errorWidget: (context, url, error) => Image.asset(
+                      'assets/images/image 2.png',
                       width: 148,
                       height: 184,
                     ),
@@ -148,6 +161,7 @@ class ItemCell extends StatelessWidget {
                 title,
                 textAlign: TextAlign.left,
                 style: theme.textTheme.subtitle1,
+                maxLines: 1,
               ),
             ),
             if (hasDiscount)

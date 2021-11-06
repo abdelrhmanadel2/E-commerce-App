@@ -5,8 +5,8 @@ import 'package:ecommerce_app/screens/mainCategory/main_catetgories.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/services/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class BottomNavBar extends StatefulWidget {
   BottomNavBar({Key? key, required this.index})
@@ -32,29 +32,53 @@ class _BottomNavBarState extends State<BottomNavBar> {
     final theme = Theme.of(context);
     return BottomNavigationBar(
       showUnselectedLabels: true,
-      backgroundColor: theme.colorScheme.primaryVariant,
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: theme.colorScheme.surface,
       unselectedItemColor: theme.colorScheme.onSurface,
-      items: const <BottomNavigationBarItem>[
+      items:  <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
+          icon:widget.index == 0 ?SvgPicture.asset(
+            "assets/icons/home-fill-icon.svg",
+          ):SvgPicture.asset(
+            "assets/icons/home-outline-icon.svg",
+            color: theme.colorScheme.onSurface,
+          ),
           label: 'Home',
-
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.add_shopping_cart_rounded,),
+          icon:widget.index == 1 ?SvgPicture.asset(
+          "assets/icons/shop-fill-icon.svg",
+        ):SvgPicture.asset(
+            "assets/icons/shop-outline-icon.svg",
+           color: theme.colorScheme.onSurface,
+          ),
           label: 'Shop',
-
         ),
         BottomNavigationBarItem(
-          icon:  Icon(Icons.shopping_bag_outlined,),
+          icon:widget.index == 2 ?SvgPicture.asset(
+            "assets/icons/bag-fill-icon.svg",
+          ):SvgPicture.asset(
+            "assets/icons/bag-outline-icon.svg",
+            color: theme.colorScheme.onSurface,
+          ),
           label: 'Cart',
         ),
         BottomNavigationBarItem(
-          icon:  Icon(Icons.favorite_outline_sharp,),
+          icon:widget.index == 3 ?SvgPicture.asset(
+            "assets/icons/favorite-fill-icon.svg",
+          ):SvgPicture.asset(
+            "assets/icons/favorite-outline-icon.svg",
+            color: theme.colorScheme.onSurface,
+          ),
           label: 'Favorite',
         ),
         BottomNavigationBarItem(
-          icon:  Icon(Icons.perm_contact_calendar_outlined),
+          icon:widget.index == 4 ?SvgPicture.asset(
+            "assets/icons/profile-fill-icon.svg",
+          ):SvgPicture.asset(
+            "assets/icons/profile-outline-icon.svg",
+            color: theme.colorScheme.onSurface,
+          ),
           label: 'Profile',
         ),
       ],
@@ -85,8 +109,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       case 2:
         {
           Get.offAndToNamed(
-            AppRoutes.subCategory,
-
+            AppRoutes.mainCategory,
           );
 
         }

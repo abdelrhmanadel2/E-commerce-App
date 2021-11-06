@@ -6,7 +6,6 @@ import 'package:ecommerce_app/utils/translation_key.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
 import 'package:ecommerce_app/widgets/button.dart';
 import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
-import 'package:ecommerce_app/widgets/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
