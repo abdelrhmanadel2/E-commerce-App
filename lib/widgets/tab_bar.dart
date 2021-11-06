@@ -123,7 +123,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
         break;
       case 4:
         {
-            Get.to(() => screenArray[4]);
+          Get.offAndToNamed(
+            AppRoutes.profileScreen,
+          );
         }
         break;
     }
