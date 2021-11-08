@@ -27,6 +27,7 @@ class CustomElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
+
           splashFactory: InkSplash.splashFactory,
           fixedSize: MaterialStateProperty.all(Size(width.w, height.h)),
           backgroundColor: MaterialStateProperty.resolveWith((states) {
@@ -35,6 +36,7 @@ class CustomElevatedButton extends StatelessWidget {
             }
             return background;
           }),
+
           foregroundColor: MaterialStateProperty.all(forground),
           shape:
               circle ? MaterialStateProperty.all(const CircleBorder()) : null),

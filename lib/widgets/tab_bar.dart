@@ -30,62 +30,75 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
 
     final theme = Theme.of(context);
-    return BottomNavigationBar(
-      showUnselectedLabels: true,
-      type: BottomNavigationBarType.fixed,
-      backgroundColor: theme.colorScheme.surface,
-      unselectedItemColor: theme.colorScheme.onSurface,
-      items:  <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon:widget.index == 0 ?SvgPicture.asset(
-            "assets/icons/home-fill-icon.svg",
-          ):SvgPicture.asset(
-            "assets/icons/home-outline-icon.svg",
-            color: theme.colorScheme.onSurface,
-          ),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon:widget.index == 1 ?SvgPicture.asset(
-          "assets/icons/shop-fill-icon.svg",
-        ):SvgPicture.asset(
-            "assets/icons/shop-outline-icon.svg",
-           color: theme.colorScheme.onSurface,
-          ),
-          label: 'Shop',
-        ),
-        BottomNavigationBarItem(
-          icon:widget.index == 2 ?SvgPicture.asset(
-            "assets/icons/bag-fill-icon.svg",
-          ):SvgPicture.asset(
-            "assets/icons/bag-outline-icon.svg",
-            color: theme.colorScheme.onSurface,
-          ),
-          label: 'Cart',
-        ),
-        BottomNavigationBarItem(
-          icon:widget.index == 3 ?SvgPicture.asset(
-            "assets/icons/favorite-fill-icon.svg",
-          ):SvgPicture.asset(
-            "assets/icons/favorite-outline-icon.svg",
-            color: theme.colorScheme.onSurface,
-          ),
-          label: 'Favorite',
-        ),
-        BottomNavigationBarItem(
-          icon:widget.index == 4 ?SvgPicture.asset(
-            "assets/icons/profile-fill-icon.svg",
-          ):SvgPicture.asset(
-            "assets/icons/profile-outline-icon.svg",
-            color: theme.colorScheme.onSurface,
-          ),
-          label: 'Profile',
-        ),
-      ],
-      currentIndex: widget.index,
-      selectedItemColor: theme.colorScheme.secondary,
-      onTap: _onItemTapped,
+    return Container(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
+            topRight: Radius.circular(10), topLeft: Radius.circular(10),),
+        boxShadow: [
+          BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 1),
+        ],
+      ),
+      child: ClipRRect(
 
+        borderRadius: const BorderRadius.only(topLeft: Radius.circular(10.0), topRight: Radius.circular(10.0), ),
+        child: BottomNavigationBar(
+          showUnselectedLabels: true,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: theme.colorScheme.surface,
+          unselectedItemColor: theme.colorScheme.onSurface,
+          items:  <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon:widget.index == 0 ?SvgPicture.asset(
+                "assets/icons/home-fill-icon.svg",
+              ):SvgPicture.asset(
+                "assets/icons/home-outline-icon.svg",
+                color: theme.colorScheme.onSurface,
+              ),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon:widget.index == 1 ?SvgPicture.asset(
+              "assets/icons/shop-fill-icon.svg",
+            ):SvgPicture.asset(
+                "assets/icons/shop-outline-icon.svg",
+               color: theme.colorScheme.onSurface,
+              ),
+              label: 'Shop',
+            ),
+            BottomNavigationBarItem(
+              icon:widget.index == 2 ?SvgPicture.asset(
+                "assets/icons/bag-fill-icon.svg",
+              ):SvgPicture.asset(
+                "assets/icons/bag-outline-icon.svg",
+                color: theme.colorScheme.onSurface,
+              ),
+              label: 'Cart',
+            ),
+            BottomNavigationBarItem(
+              icon:widget.index == 3 ?SvgPicture.asset(
+                "assets/icons/favorite-fill-icon.svg",
+              ):SvgPicture.asset(
+                "assets/icons/favorite-outline-icon.svg",
+                color: theme.colorScheme.onSurface,
+              ),
+              label: 'Favorite',
+            ),
+            BottomNavigationBarItem(
+              icon:widget.index == 4 ?SvgPicture.asset(
+                "assets/icons/profile-fill-icon.svg",
+              ):SvgPicture.asset(
+                "assets/icons/profile-outline-icon.svg",
+                color: theme.colorScheme.onSurface,
+              ),
+              label: 'Profile',
+            ),
+          ],
+          currentIndex: widget.index,
+          selectedItemColor: theme.colorScheme.secondary,
+          onTap: _onItemTapped,
+
+        ),
+      ),
     );
   }
 
