@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/screens/myorders/myorderwidget/oreder_cell.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
@@ -128,91 +129,14 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: Container(
-              width: Get.width*0.92,
-              height: 164,
-              decoration:  BoxDecoration(
-                color: theme.colorScheme.surface,
-                  borderRadius: BorderRadius.circular(10.0),
-                boxShadow: const [
-                  BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding:  const EdgeInsets.fromLTRB(19.0,19.0,15.0,18.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Order №1947034:",style: extend(theme.textTheme.button ?? const TextStyle(), TextStyle(fontSize: 16))),
-                        Text("05-12-2019",style: extend(theme.textTheme.button ?? const TextStyle(), TextStyle(color: theme.dividerColor,fontSize: 14))),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding:  const EdgeInsets.fromLTRB(19.0,0.0,15.0,4.0),
-                    child: RichText(
-                      textAlign: TextAlign.left,
-                      text: TextSpan(
-
-                        children: [
-                          TextSpan(text: 'Tracking number: ',style:extend(theme.textTheme.button ?? const TextStyle(), TextStyle(color: theme.dividerColor,fontSize: 14))),
-                          TextSpan(text: 'IW3475453455',style: extend(theme.textTheme.button ?? const TextStyle(), const TextStyle(fontSize: 14))),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding:  const EdgeInsets.fromLTRB(19.0,0.0,15.0,4.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(text: 'Quantity: ',style:extend(theme.textTheme.button ?? const TextStyle(), TextStyle(color: theme.dividerColor,fontSize: 14))),
-                              TextSpan(text: '3',style: extend(theme.textTheme.button ?? const TextStyle(), const TextStyle(fontSize: 14))),
-                            ],
-                          ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(text: 'Total Amount: ',style:extend(theme.textTheme.button ?? const TextStyle(), TextStyle(color: theme.dividerColor,fontSize: 14))),
-                              TextSpan(text: '112\$',style: extend(theme.textTheme.button ?? const TextStyle(), const TextStyle(fontSize: 14))),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding:  const EdgeInsets.fromLTRB(19.0,10.0,15.0,4.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CustomElevatedButton(
-                            width: 98,
-                            background: theme.colorScheme.onBackground,
-                            height: 36,
-                            onPressed: () {
-                              print("hiiiiii");
-                            },
-                            text: "check",),
-                        Text("Delivered",style: extend(theme.textTheme.button ?? const TextStyle(), const TextStyle(fontSize: 16,color: kSuccessColor))),
-
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-
-            ),
-          ),
+         SizedBox(
+           height: Get.height*0.7 ,
+           child: ListView.builder(
+             itemCount: 10,
+               itemBuilder: (BuildContext context, int index){
+                 return OrderCell(orderNo: '1947034',totalAmountOfMoney: "112",itemCounter: "3", date: '18-11-2022', cancelled: selectedIndex == 2?true:false,delivered: selectedIndex == 0?true:false,);
+               }),
+         )
         ],
       ),
     );

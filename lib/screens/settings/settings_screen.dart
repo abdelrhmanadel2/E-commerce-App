@@ -35,23 +35,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const SizedBox(
-                      height: 18,
-                    ),
-                    Text(
-                      "Settings",
-                      style: theme.textTheme.headline1,
-                    ),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                  ],
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const SizedBox(
+                    height: 18,
+                  ),
+                  Text(
+                    "Settings",
+                    style: theme.textTheme.headline1,
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                ],
               ),
               Text("Personal Information",style: extend(theme.textTheme.headline1 ?? const TextStyle(), const TextStyle(fontSize: 16,))),
               const SizedBox(
