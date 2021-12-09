@@ -16,7 +16,8 @@ class ApiService extends GetxService {
   Dio dio = new Dio();
 
   void init() {
-    dio.options.baseUrl = "https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/ecommerce-orxpy/service/ecommerceApi/incoming_webhook";
+    dio.options.baseUrl =
+        "https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/ecommerce-orxpy/service/ecommerceApi/incoming_webhook/";
     dio.options.connectTimeout = 60000;
     dio.options.receiveTimeout = 60000;
     dio.interceptors.add(PrettyDioLogger(

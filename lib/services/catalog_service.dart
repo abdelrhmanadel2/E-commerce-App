@@ -8,8 +8,17 @@ import 'package:ecommerce_app/utils/services/services.dart';
 class CatalogService {
   static ApiService api = ApiService();
 
-  static Future<List<ProductModel>?> getCategories() async {
-    var data = await api.request(Services.getProductList, "GET");
+  static Future<List<ProductModel>?> getCategories(
+      {maincategory, subCategory}) async {
+    var queryParameters = {
+      "Secret": "01017018407",
+      "mainCategory": maincategory
+    };
+    if (subCategory != null) {
+      queryParameters.addAll({"subCategory": subCategory});
+    }
+    final data = await api.request(Services.getProductList, "GET",
+        queryParamters: queryParameters);
     if (data != null) {
       List<ProductModel> categories = [];
 

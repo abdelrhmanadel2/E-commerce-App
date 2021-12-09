@@ -49,8 +49,11 @@ class SubCategory extends StatelessWidget {
                         child: GestureDetector(
                           onTap: (){
                             Get.to(() => CatalogScreen(
+                              
                               title: "Summer Sales",
-                            ));
+                              
+
+                            ),  );
                           },
                           child: Container(
                             height: 100,

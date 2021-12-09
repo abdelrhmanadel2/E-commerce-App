@@ -28,6 +28,7 @@ class CatalogScreen extends StatelessWidget {
         body: GetBuilder<CatalogController>(
             init: CatalogController(),
             builder: (controller) {
+
               return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

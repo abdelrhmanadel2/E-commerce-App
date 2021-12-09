@@ -8,7 +8,6 @@ class CatalogController extends GetxController {
 
   @override
   void onInit() {
-    feachProducts();
     super.onInit();
   }
 
@@ -17,8 +16,8 @@ class CatalogController extends GetxController {
     update();
   }
 
-  void feachProducts() async {
-    var products = await CatalogService.getCategories();
+  void feachProducts(mainCategory,subcategory) async {
+    var products = await CatalogService.getCategories(maincategory: mainCategory,subCategory: subcategory);
     if (products != null) {
       productList = products;
       print(productList.length);
