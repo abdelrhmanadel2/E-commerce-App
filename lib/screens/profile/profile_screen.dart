@@ -1,4 +1,5 @@
 
+import 'package:ecommerce_app/screens/creditcard/credit_card.dart';
 import 'package:ecommerce_app/utils/services/app_routes.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
@@ -172,29 +173,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
       ),
       const SizedBox(height: 10,),
-      Container(
-        padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0,0.0),
-        height: 65,
-        width: double.infinity,
-        decoration:  BoxDecoration(
-          border:  Border(
-            bottom: BorderSide(width: 1.0, color: theme.colorScheme.primaryVariant),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
-                const SizedBox(height: 10,),
-                Text("Promocodes",style: theme.textTheme.subtitle1,),
-                const SizedBox(height: 10,),
-                Text("You have special promocodes",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
-              ],
+      GestureDetector(
+        onTap: (){
+
+            Get.to(const CreditCardScreen());
+
+        },
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0,0.0),
+          height: 65,
+          width: double.infinity,
+          decoration:  BoxDecoration(
+            border:  Border(
+              bottom: BorderSide(width: 1.0, color: theme.colorScheme.primaryVariant),
             ),
-            Icon(Icons.arrow_forward_ios,color: theme.dividerColor,size: 15.0,)
-          ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:  [
+                  const SizedBox(height: 10,),
+                  Text("Promocodes",style: theme.textTheme.subtitle1,),
+                  const SizedBox(height: 10,),
+                  Text("You have special promocodes",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
+                ],
+              ),
+              Icon(Icons.arrow_forward_ios,color: theme.dividerColor,size: 15.0,)
+            ],
+          ),
         ),
       ),
       const SizedBox(height: 10,),

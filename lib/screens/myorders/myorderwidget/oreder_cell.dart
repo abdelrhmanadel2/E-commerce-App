@@ -1,3 +1,4 @@
+
 import 'package:ecommerce_app/screens/myorders/order_detail_screen.dart';
 import 'package:ecommerce_app/utils/colors.dart';
 import 'package:ecommerce_app/utils/utils.dart';
@@ -93,7 +94,7 @@ class OrderCell extends StatelessWidget {
                     onPressed: () {
                      Get.to(const OrderDetailsScreen());
                     },
-                    text: "check",),
+                    text: "check",hasTextStyle: true,textStyle: TextStyle(color: theme.colorScheme.surface),),
                   if (cancelled) Text("Cancelled",style: extend(theme.textTheme.button ?? const TextStyle(), const TextStyle(fontSize: 16,color: kErrorColor))) else delivered?Text("Delivered",style: extend(theme.textTheme.button ?? const TextStyle(), const TextStyle(fontSize: 16,color: kSuccessColor))):Text("Not Delivered",style: extend(theme.textTheme.button ?? const TextStyle(),  TextStyle(fontSize: 16,color: theme.dividerColor))),
 
                 ],

@@ -206,7 +206,7 @@ class OrderDetailsScreen extends StatelessWidget {
                       onPressed: () {
                         Get.to(const OrderDetailsScreen());
                       },
-                      text: "Reorder",),
+                      text: "Reorder",hasTextStyle: true,textStyle: TextStyle(color: theme.colorScheme.surface)),
                     CustomElevatedButton(
                       width: 160,
                       background: theme.colorScheme.secondary,

@@ -12,12 +12,14 @@ class CustomElevatedButton extends StatelessWidget {
       this.forground,
       this.text,
       this.onPressed,
-      this.circle = false})
+      this.circle = false, this.hasTextStyle=false, this.textStyle = null})
       : super(key: key);
   final double width;
+  final textStyle;
   final double height;
   final icon;
   final text;
+  final hasTextStyle;
   final forground;
   final onPressed;
   final background;
@@ -47,9 +49,12 @@ class CustomElevatedButton extends StatelessWidget {
           if (icon != null) icon,
           if (text != null) ...[
             if (icon != null) SizedBox(width: 9.r),
-            Text(
+            if (hasTextStyle) Text(
               text,
-            )
+              style: textStyle,
+            ) else Text(
+              text,
+            ),
           ]
         ],
       ),
