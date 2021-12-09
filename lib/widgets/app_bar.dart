@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:ecommerce_app/utils/styles.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
-  final title, hasBackButton, hasElevation, tabBar;
+  final title, hasBackButton, hasElevation, tabBar, color;
   final List<Widget>? actions;
 
   const AppBarWidget({
@@ -15,6 +15,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     this.hasBackButton = true,
     this.hasElevation = true,
     this.actions, this.tabBar=false,
+    this.color = Colors.white,
   }) : super(key: key);
 
   @override
@@ -23,7 +24,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: hasElevation ? 1 : 0,
       centerTitle: true,
-      backgroundColor: theme.primaryColor,
+      backgroundColor: color==Colors.white?theme.primaryColor:color,
       actions: actions,
       leading: hasBackButton
           ? IconButton(
