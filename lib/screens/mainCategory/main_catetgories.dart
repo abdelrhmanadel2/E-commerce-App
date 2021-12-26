@@ -13,8 +13,9 @@ class MainCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    var hieght = Get.height - MediaQuery.of(context).padding.bottom + 17.6;
+    var hieght = Get.height - MediaQuery.of(context).padding.bottom + 17;
     return Scaffold(
+
       bottomNavigationBar: BottomNavBar(index: 1,),
       body: Container(
         color: theme.colorScheme.background,

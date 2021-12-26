@@ -5,8 +5,6 @@ import 'package:ecommerce_app/screens/mainCategory/main_catetgories.dart';
 import 'package:ecommerce_app/screens/myorders/my_orders_screen.dart';
 import 'package:ecommerce_app/screens/profile/profile_screen.dart';
 import 'package:ecommerce_app/screens/settings/settings_screen.dart';
-import 'package:ecommerce_app/screens/profile/profile_screen.dart';
-import 'package:ecommerce_app/screens/subCategory/sub_gategory_screen.dart';
 import 'package:get/get.dart';
 
 

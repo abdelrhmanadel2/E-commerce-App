@@ -130,7 +130,7 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
             ),
           ),
          SizedBox(
-           height: Get.height*0.7 ,
+           height: Get.height*0.7 - (MediaQuery.of(context).padding.bottom + 17) ,
            child: ListView.builder(
              itemCount: 10,
                itemBuilder: (BuildContext context, int index){
