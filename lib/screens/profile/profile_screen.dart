@@ -1,14 +1,12 @@
 
-import 'package:ecommerce_app/screens/creditcard/credit_card.dart';
+import 'package:ecommerce_app/screens/creditcard/credit_card_screen.dart';
 import 'package:ecommerce_app/utils/services/app_routes.dart';
 import 'package:ecommerce_app/utils/utils.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
 import 'package:ecommerce_app/widgets/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ecommerce_app/widgets/app_bar.dart';
-import 'package:ecommerce_app/widgets/tab_bar.dart';
-import 'package:flutter/material.dart';
+
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);

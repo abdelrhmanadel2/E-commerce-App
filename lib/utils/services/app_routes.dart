@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/screens/cart/cart_screen.dart';
 import 'package:ecommerce_app/screens/catalog/catalog_screen.dart';
 import 'package:ecommerce_app/screens/home/home_screen.dart';
 import 'package:ecommerce_app/screens/home/home_widget/sale_sreen.dart';
@@ -15,6 +16,7 @@ mixin AppRoutes {
   static String profileScreen = "/profile";
   static String subCategory = "/subCategory";
   static String catalog = "/catalog";
+  static String cart = "/cart";
   static String myOrder = "/myorders";
   static String settings = "/settings";
 
@@ -43,6 +45,10 @@ mixin AppRoutes {
     GetPage(
       name: catalog,
       page: () =>  CatalogScreen(),
+    ),
+    GetPage(
+      name: cart,
+      page: () =>  const CartScreen(),
     ),
     GetPage(
       name: myOrder,

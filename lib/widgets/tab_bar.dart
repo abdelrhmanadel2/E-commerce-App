@@ -122,7 +122,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       case 2:
         {
           Get.offAndToNamed(
-            AppRoutes.mainCategory,
+            AppRoutes.cart,
           );
 
         }
