@@ -198,7 +198,7 @@ packages:
     source: hosted
     version: "6.1.2"
   flip_card:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flip_card
       url: "https://pub.dartlang.org"
