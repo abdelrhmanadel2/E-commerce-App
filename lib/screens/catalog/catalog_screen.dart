@@ -17,7 +17,7 @@ class CatalogScreen extends StatelessWidget {
 
     return Scaffold(
         bottomNavigationBar: BottomNavBar(
-          index: 2,
+          index: 1,
         ),
         appBar: AppBarWidget(
           hasElevation: false,
@@ -28,7 +28,6 @@ class CatalogScreen extends StatelessWidget {
         body: GetBuilder<CatalogController>(
             init: CatalogController(),
             builder: (controller) {
-
               return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

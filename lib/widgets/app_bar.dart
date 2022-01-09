@@ -10,11 +10,11 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
   const AppBarWidget({
     Key? key,
-
     this.title,
     this.hasBackButton = true,
     this.hasElevation = true,
-    this.actions, this.tabBar=false,
+    this.actions,
+    this.tabBar = false,
     this.color = Colors.white,
   }) : super(key: key);
 
@@ -24,7 +24,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: hasElevation ? 1 : 0,
       centerTitle: true,
-      backgroundColor: color==Colors.white?theme.primaryColor:color,
+      backgroundColor: color == Colors.white ? theme.primaryColor : color,
       actions: actions,
       leading: hasBackButton
           ? IconButton(

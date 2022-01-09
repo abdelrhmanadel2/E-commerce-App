@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/screens/catalog/catalog_screen.dart';
 import 'package:ecommerce_app/screens/home/home_screen.dart';
 import 'package:ecommerce_app/screens/home/home_widget/sale_sreen.dart';
+import 'package:ecommerce_app/screens/home_page.dart';
 import 'package:ecommerce_app/screens/mainCategory/main_catetgories.dart';
 import 'package:ecommerce_app/screens/myorders/my_orders_screen.dart';
 import 'package:ecommerce_app/screens/profile/profile_screen.dart';
@@ -18,6 +19,7 @@ mixin AppRoutes {
   static String catalog = "/catalog";
   static String myOrder = "/myorders";
   static String settings = "/settings";
+  static String tri = "/try";
 
   static List<GetPage> routes = [
     // GetPage(name: initialRoute, page: () => PersonalInformationScreen()),
@@ -35,8 +37,8 @@ mixin AppRoutes {
       page: () => const ProfileScreen(),
     ),
     GetPage(
-      name: mainCategory,
-      page: () => const MainCategory(),
+      name: tri,
+      page: () =>  HomePage(),
     ),
     GetPage(
         name: saleRoute,
