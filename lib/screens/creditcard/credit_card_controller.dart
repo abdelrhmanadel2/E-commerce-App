@@ -18,12 +18,7 @@ class CredutCardController extends GetxController{
     super.onInit();
   }
  authenticate() async {
-    bool authenticated = false;
     try {
-
-        isAuthenticating = true;
-        authorized = 'Authenticating';
-
       showScreen = await auth.authenticate(
           localizedReason: "you can choose your authentication way",
           androidAuthStrings: const AndroidAuthMessages(biometricRequiredTitle: 'you can authenticate through fingerPrint or through pattern '),
@@ -31,7 +26,7 @@ class CredutCardController extends GetxController{
           useErrorDialogs: true,
           stickyAuth: true);
 
-        isAuthenticating = false;
+
 
     } on PlatformException catch (e) {
       print(e);
@@ -44,7 +39,7 @@ class CredutCardController extends GetxController{
     }
 
     update();
-    authorized = authenticated ? 'Authorized' : 'Not Authorized';
+
   }
   Future<void> detectIfCanShowAuthenticationByBioMatrics() async {
     if(canCheckBiometrics){

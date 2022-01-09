@@ -12,9 +12,10 @@ class CustomElevatedButton extends StatelessWidget {
       this.forground,
       this.text,
       this.onPressed,
-      this.circle = false, this.hasTextStyle=false, this.textStyle = null})
+      this.circle = false, this.hasTextStyle=false, this.textStyle = null, this.elivation=0})
       : super(key: key);
   final double width;
+  final double elivation;
   final textStyle;
   final double height;
   final icon;
@@ -28,8 +29,8 @@ class CustomElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+      
       style: ButtonStyle(
-
           splashFactory: InkSplash.splashFactory,
           fixedSize: MaterialStateProperty.all(Size(width.w, height.h)),
           backgroundColor: MaterialStateProperty.resolveWith((states) {
@@ -38,8 +39,8 @@ class CustomElevatedButton extends StatelessWidget {
             }
             return background;
           }),
-
-          foregroundColor: MaterialStateProperty.all(forground),
+           foregroundColor: MaterialStateProperty.all(forground),
+          elevation: MaterialStateProperty.all(elivation),
           shape:
               circle ? MaterialStateProperty.all(const CircleBorder()) : null),
       onPressed: onPressed,

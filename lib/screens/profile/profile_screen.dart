@@ -31,7 +31,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ],
       ),
       backgroundColor: theme.primaryColor,
-      body:Column(
+      body:SingleChildScrollView(
+        child: Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
     Container(
@@ -52,194 +53,82 @@ class _ProfileScreenState extends State<ProfileScreen> {
     height: 12,
     ),
   ],
-      ),
+        ),
     ),
-      Container(
-        color: theme.primaryColor,
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-
-          children: [
         Container(
-        margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10),
-        height: 64,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(50.0),
-          child: Image.asset(
-            "assets/images/blackImage.png",
-            fit: BoxFit.cover,
-            ),
-        ),
-        ),
-            const SizedBox(width: 10,),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
-                const SizedBox(height: 10,),
-                Text("Matilda Brown",style: theme.textTheme.subtitle1,),
-                const SizedBox(height: 10,),
-                Text("matildabrown@mail.com",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
-              ],
-            ),
-          ],
-        ),
-      ),
-      const SizedBox(height: 10,),
-      GestureDetector(
-        onTap: (){
-          Get.offAndToNamed(
-            AppRoutes.myOrder,
-          );
-        },
-        child: Container(
-          padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0,0.0),
-          height: 65,
-          width: double.infinity,
-          decoration:  BoxDecoration(
-            border:  Border(
-              bottom: BorderSide(width: 1.0, color: theme.colorScheme.primaryVariant),
-            ),
-          ),
+          color: theme.primaryColor,
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+
             children: [
+          Container(
+          margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10),
+          height: 64,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(50.0),
+            child: Image.asset(
+              "assets/images/blackImage.png",
+              fit: BoxFit.cover,
+              ),
+          ),
+          ),
+              const SizedBox(width: 10,),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:  [
                   const SizedBox(height: 10,),
-                  Text("My orders",style: theme.textTheme.subtitle1,),
+                  Text("Matilda Brown",style: theme.textTheme.subtitle1,),
                   const SizedBox(height: 10,),
-                  Text("Already have 12 orders",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
+                  Text("matildabrown@mail.com",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
                 ],
               ),
-              Icon(Icons.arrow_forward_ios,color: theme.dividerColor,size: 15.0,)
             ],
           ),
         ),
-      ),
-      const SizedBox(height: 10,),
-      Container(
-        padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0,0.0),
-        height: 65,
-        width: double.infinity,
-        decoration:  BoxDecoration(
-          border:  Border(
-            bottom: BorderSide(width: 1.0, color: theme.colorScheme.primaryVariant),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
-                const SizedBox(height: 10,),
-                Text("Shipping addresses",style: theme.textTheme.subtitle1,),
-                const SizedBox(height: 10,),
-                Text("3 ddresses",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
-              ],
-            ),
-            Icon(Icons.arrow_forward_ios,color: theme.dividerColor,size: 15.0,)
-          ],
-        ),
-      ),
-      const SizedBox(height: 10,),
-      Container(
-        padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0,0.0),
-        height: 65,
-        width: double.infinity,
-        decoration:  BoxDecoration(
-          border:  Border(
-            bottom: BorderSide(width: 1.0, color: theme.colorScheme.primaryVariant),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
-                const SizedBox(height: 10,),
-                Text("Payment methods",style: theme.textTheme.subtitle1,),
-                const SizedBox(height: 10,),
-                Text("Visa  **34",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
-              ],
-            ),
-            Icon(Icons.arrow_forward_ios,color: theme.dividerColor,size: 15.0,)
-          ],
-        ),
-      ),
-      const SizedBox(height: 10,),
-      GestureDetector(
-        onTap: (){
-
-            Get.to(const CreditCardScreen());
-
-        },
-        child: Container(
-          padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0,0.0),
-          height: 65,
-          width: double.infinity,
-          decoration:  BoxDecoration(
-            border:  Border(
-              bottom: BorderSide(width: 1.0, color: theme.colorScheme.primaryVariant),
-            ),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children:  [
-                  const SizedBox(height: 10,),
-                  Text("Promocodes",style: theme.textTheme.subtitle1,),
-                  const SizedBox(height: 10,),
-                  Text("You have special promocodes",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
-                ],
-              ),
-              Icon(Icons.arrow_forward_ios,color: theme.dividerColor,size: 15.0,)
-            ],
-          ),
-        ),
-      ),
-      const SizedBox(height: 10,),
-      Container(
-        padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0,0.0),
-        height: 65,
-        width: double.infinity,
-        decoration:  BoxDecoration(
-          border:  Border(
-            bottom: BorderSide(width: 1.0, color: theme.colorScheme.primaryVariant),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
-                const SizedBox(height: 10,),
-                Text("My reviews",style: theme.textTheme.subtitle1,),
-                const SizedBox(height: 10,),
-                Text("Reviews for 4 items",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
-              ],
-            ),
-            Icon(Icons.arrow_forward_ios,color: theme.dividerColor,size: 15.0,)
-          ],
-        ),
-      ),
-      GestureDetector(
+        const SizedBox(height: 10,),
+        GestureDetector(
           onTap: (){
-            Get.offAndToNamed(
-              AppRoutes.settings,
+            Get.toNamed(
+              AppRoutes.myOrder,
             );
           },
-        child: Container(
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0,0.0),
+            height: 65,
+            width: double.infinity,
+            decoration:  BoxDecoration(
+              border:  Border(
+                bottom: BorderSide(width: 1.0, color: theme.colorScheme.primaryVariant),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children:  [
+                    const SizedBox(height: 10,),
+                    Text("My orders",style: theme.textTheme.subtitle1,),
+                    const SizedBox(height: 10,),
+                    Text("Already have 12 orders",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
+                  ],
+                ),
+                Icon(Icons.arrow_forward_ios,color: theme.dividerColor,size: 15.0,)
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 10,),
+        Container(
           padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0,0.0),
           height: 65,
           width: double.infinity,
-
+          decoration:  BoxDecoration(
+            border:  Border(
+              bottom: BorderSide(width: 1.0, color: theme.colorScheme.primaryVariant),
+            ),
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -247,18 +136,131 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:  [
                   const SizedBox(height: 10,),
-                  Text("Settings",style: theme.textTheme.subtitle1,),
+                  Text("Shipping addresses",style: theme.textTheme.subtitle1,),
                   const SizedBox(height: 10,),
-                  Text("Notifications, password",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
+                  Text("3 ddresses",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
                 ],
               ),
               Icon(Icons.arrow_forward_ios,color: theme.dividerColor,size: 15.0,)
             ],
           ),
         ),
-      ),
+        const SizedBox(height: 10,),
+        Container(
+          padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0,0.0),
+          height: 65,
+          width: double.infinity,
+          decoration:  BoxDecoration(
+            border:  Border(
+              bottom: BorderSide(width: 1.0, color: theme.colorScheme.primaryVariant),
+            ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:  [
+                  const SizedBox(height: 10,),
+                  Text("Payment methods",style: theme.textTheme.subtitle1,),
+                  const SizedBox(height: 10,),
+                  Text("Visa  **34",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
+                ],
+              ),
+              Icon(Icons.arrow_forward_ios,color: theme.dividerColor,size: 15.0,)
+            ],
+          ),
+        ),
+        const SizedBox(height: 10,),
+        GestureDetector(
+          onTap: (){
+
+              Get.to(const CreditCardScreen());
+
+          },
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0,0.0),
+            height: 65,
+            width: double.infinity,
+            decoration:  BoxDecoration(
+              border:  Border(
+                bottom: BorderSide(width: 1.0, color: theme.colorScheme.primaryVariant),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children:  [
+                    const SizedBox(height: 10,),
+                    Text("Promocodes",style: theme.textTheme.subtitle1,),
+                    const SizedBox(height: 10,),
+                    Text("You have special promocodes",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
+                  ],
+                ),
+                Icon(Icons.arrow_forward_ios,color: theme.dividerColor,size: 15.0,)
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 10,),
+        Container(
+          padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0,0.0),
+          height: 65,
+          width: double.infinity,
+          decoration:  BoxDecoration(
+            border:  Border(
+              bottom: BorderSide(width: 1.0, color: theme.colorScheme.primaryVariant),
+            ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:  [
+                  const SizedBox(height: 10,),
+                  Text("My reviews",style: theme.textTheme.subtitle1,),
+                  const SizedBox(height: 10,),
+                  Text("Reviews for 4 items",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
+                ],
+              ),
+              Icon(Icons.arrow_forward_ios,color: theme.dividerColor,size: 15.0,)
+            ],
+          ),
+        ),
+        GestureDetector(
+            onTap: (){
+              Get.toNamed(
+                AppRoutes.settings,
+              );
+            },
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0,0.0),
+            height: 65,
+            width: double.infinity,
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children:  [
+                    const SizedBox(height: 10,),
+                    Text("Settings",style: theme.textTheme.subtitle1,),
+                    const SizedBox(height: 10,),
+                    Text("Notifications, password",style: extend(theme.textTheme.caption ?? const TextStyle(), TextStyle(color: theme.dividerColor))),
+                  ],
+                ),
+                Icon(Icons.arrow_forward_ios,color: theme.dividerColor,size: 15.0,)
+              ],
+            ),
+          ),
+        ),
   ],
     ),
+      ),
     );
   }
 }

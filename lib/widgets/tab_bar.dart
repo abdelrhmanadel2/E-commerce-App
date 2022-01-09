@@ -42,6 +42,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
         borderRadius: const BorderRadius.only(topLeft: Radius.circular(10.0), topRight: Radius.circular(10.0), ),
         child: BottomNavigationBar(
+
           showUnselectedLabels: true,
           type: BottomNavigationBarType.fixed,
           backgroundColor: theme.colorScheme.surface,
@@ -143,4 +144,5 @@ class _BottomNavBarState extends State<BottomNavBar> {
         break;
     }
   }
+  Size get preferredSize => const Size(double.infinity, 60);
 }
