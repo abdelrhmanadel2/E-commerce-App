@@ -9,6 +9,7 @@ class CredutCardController extends GetxController{
   bool canCheckBiometrics = false;
   List<BiometricType>? availableBiometrics;
   bool showScreen = false;
+
   String authorized = 'Not Authorized';
   bool isAuthenticating = false;
 
@@ -37,7 +38,7 @@ class CredutCardController extends GetxController{
       return;
 
     }
-
+    isAuthenticating = true;
     update();
 
   }

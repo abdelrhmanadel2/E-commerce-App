@@ -1,7 +1,7 @@
 import 'package:credit_card_input_form/constants/constanst.dart';
 import 'package:ecommerce_app/screens/creditcard/credit_card_controller.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
-import 'package:ecommerce_app/widgets/loading_widget.dart';
+import 'package:credit_card_input_form/constants/constanst.dart';
 import 'package:ecommerce_app/widgets/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:credit_card_input_form/credit_card_input_form.dart';
@@ -13,7 +13,10 @@ class CreditCardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     var visa = false;
-    return Scaffold(
+    return GetBuilder<CredutCardController>(
+      init: CredutCardController(),
+      builder: (controller) {
+        return Scaffold(
       bottomNavigationBar: BottomNavBar(index: 4,),
       appBar: AppBarWidget(
         hasElevation: false,
@@ -23,10 +26,59 @@ class CreditCardScreen extends StatelessWidget {
         ],
       ),
       backgroundColor: theme.colorScheme.primary,
-      body:GetBuilder<CredutCardController>(
-        init: CredutCardController(),
-    builder: (controller) {
-          return controller.showScreen? Padding(
+      floatingActionButton: controller.isAuthenticating?FloatingActionButton(
+
+        onPressed: () {
+        showModalBottomSheet<void>(
+        context: context,
+        builder: (BuildContext context) {
+        return Container(
+        height: Get.height,
+        color: theme.colorScheme.background,
+        child: Center(
+        child: CreditCardInputForm(
+        backCardDecoration: BoxDecoration(
+        color: visa?const Color(0xFF9B9B9B):const Color(0xFF222222),
+        ),
+        frontCardDecoration:  BoxDecoration(
+        image:  DecorationImage(
+        image: visa?const AssetImage("assets/images/Component 7 – 1@3x.png"):const AssetImage("assets/images/Component 3 – 1@3x.png"),fit: BoxFit.cover),
+        ),
+        resetButtonDecoration: BoxDecoration(
+        color: theme.colorScheme.secondary,
+        borderRadius: const BorderRadius.all(
+        Radius.circular(10),
+        ),
+        ),
+        nextButtonDecoration: BoxDecoration(
+        color: theme.colorScheme.secondary,
+        borderRadius: const BorderRadius.all(
+        Radius.circular(10),
+        ),
+        ),
+        prevButtonDecoration: BoxDecoration(
+        color: theme.colorScheme.secondary,
+        borderRadius: const BorderRadius.all(
+        Radius.circular(10),
+        ),
+        ),
+          onStateChange: (inputState,cardInfo){
+          if(inputState == InputState.DONE) {
+            Get.back();
+          }
+          },
+
+        )
+        ),
+        );
+        },
+        );
+        },
+        backgroundColor: theme.colorScheme.secondary,
+        child: const Icon(Icons.add),
+      ):const SizedBox(),
+
+      body: controller.showScreen? Padding(
           padding: const EdgeInsets.symmetric(horizontal: 19.0,),
           child: ListView.builder(
             itemCount: 5,
@@ -90,8 +142,9 @@ class CreditCardScreen extends StatelessWidget {
 
               ],
             ),
-          );},
-      ),
-    );
+          ),);
+      },
+      );
+
   }
 }
