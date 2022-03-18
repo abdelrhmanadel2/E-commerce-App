@@ -106,7 +106,7 @@ class _SaleScreenState
                                         onTap: () {
                                           Get.to(() =>
                                               CatalogScreen(
-                                                title: "Sales",
+                                                title: "Sales",mainCategory: "Men",sale:true
                                               ));
                                         },
                                         child: Padding(
@@ -197,7 +197,7 @@ class _SaleScreenState
                                         onTap: () {
                                           Get.to(() =>
                                               CatalogScreen(
-                                                title: "Sales",
+                                                title: "Sales",mainCategory: "Ladies",sale:true
                                               ),);
                                         },
                                         child: Padding(
@@ -289,7 +289,7 @@ class _SaleScreenState
                                         onTap: () {
                                           Get.to(() =>
                                               CatalogScreen(
-                                                title: "Sales",
+                                                title: "Sales",mainCategory: "Kids",sale:true
                                               ),);
                                         },
                                         child: Padding(

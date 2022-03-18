@@ -141,7 +141,7 @@ class _homeScreenState extends State<homeScreen> {
                                         onTap: () {
                                           Get.to(() =>
                                               CatalogScreen(
-                                                title: "New Collection",
+                                                title: "New Collection",mainCategory: "Men"
                                               ),);
                                         },
                                         child: Padding(
@@ -233,7 +233,7 @@ class _homeScreenState extends State<homeScreen> {
                                         onTap: () {
                                           Get.to(() =>
                                               CatalogScreen(
-                                                title: "New Collection",
+                                                title: "New Collection",mainCategory: "Ladies"
                                               ),);
                                         },
                                         child: Padding(
@@ -326,7 +326,7 @@ class _homeScreenState extends State<homeScreen> {
                                         onTap: () {
                                           Get.to(() =>
                                               CatalogScreen(
-                                                title: "New Collection",
+                                                title: "New Collection",mainCategory: "Kids"
                                               ),);
                                         },
                                         child: Padding(

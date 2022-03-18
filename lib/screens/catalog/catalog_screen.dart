@@ -9,8 +9,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class CatalogScreen extends StatelessWidget {
-  CatalogScreen({Key? key, this.title = "",this.mainCategory,this.subCategory}) : super(key: key);
+  CatalogScreen(
+      {Key? key,
+      this.title = "",
+      this.mainCategory,
+      this.subCategory,
+      this.sale = false})
+      : super(key: key);
   String title;
+  bool sale;
   String? mainCategory;
   String? subCategory;
   @override
@@ -30,7 +37,11 @@ class CatalogScreen extends StatelessWidget {
         body: GetBuilder<CatalogController>(
             init: CatalogController(),
             builder: (controller) {
-              controller.feachProducts(mainCategory,subCategory);
+              (subCategory != null)
+                  ? controller.feachProducts(mainCategory, subCategory)
+                  : sale
+                      ? controller.fetchSaleProducts(mainCategory)
+                      : controller.fetchNewProducts(mainCategory);
               return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -70,10 +81,7 @@ class CatalogScreen extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
-                                    onPressed: () {
-                                      
-
-                                    }),
+                                    onPressed: () {}),
                               ),
                               scrollDirection: Axis.horizontal,
                               itemCount: 10,
