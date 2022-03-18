@@ -101,9 +101,7 @@ class OrderDetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Shipping Address: ",style:extend(theme.textTheme.button ?? const TextStyle(), TextStyle(color: theme.dividerColor,fontSize: 14))),
-                    SizedBox(
-                      width: Get.width*0.55,
-                      height: 70,
+                    Expanded(
                       child: Text(orderAddress,style: extend(theme.textTheme.button ?? const TextStyle(), const TextStyle(fontSize: 14)),
                         textAlign: TextAlign.left,
                         overflow: TextOverflow.ellipsis,
@@ -137,9 +135,8 @@ class OrderDetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Delivery method:  ",style:extend(theme.textTheme.button ?? const TextStyle(), TextStyle(color: theme.dividerColor,fontSize: 14))),
-                    SizedBox(
-                      width: Get.width*0.55,
-                      height: 30.0,
+                    Expanded(
+                     
                       child: Text("FedEx, 3 days, 15\$",style: extend(theme.textTheme.button ?? const TextStyle(), const TextStyle(fontSize: 14)),
                         textAlign: TextAlign.left,
                         overflow: TextOverflow.ellipsis,

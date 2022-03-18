@@ -20,7 +20,8 @@ mixin AppRoutes {
   static String myOrder = "/myorders";
   static String settings = "/settings";
   static String tri = "/try";
-
+  static String fav = "/favourites";
+  static String cart = "/cart";
   static List<GetPage> routes = [
     // GetPage(name: initialRoute, page: () => PersonalInformationScreen()),
     GetPage(
@@ -56,5 +57,16 @@ mixin AppRoutes {
       name: settings,
       page: () => const SettingsScreen(),
     ),
+  
+    GetPage(
+      name: fav,
+      page: () => const MyOrdersScreen(),
+    ),
+    GetPage(
+      name: cart,
+      page: () => const SettingsScreen(),
+    ),
+  
+  
   ];
 }

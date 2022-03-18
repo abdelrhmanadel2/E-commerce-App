@@ -2,6 +2,8 @@ import 'package:ecommerce_app/screens/home/home_screen.dart';
 import 'package:ecommerce_app/screens/home_page.dart';
 import 'package:ecommerce_app/screens/mainCategory/main_catetgories.dart';
 import 'package:ecommerce_app/utils/services/app_routes.dart';
+import 'package:ecommerce_app/widgets/button.dart';
+import 'package:ecommerce_app/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -130,16 +132,46 @@ class _BottomNavBarState extends State<BottomNavBar> {
         break;
       case 2:
         {
-          Get.offAndToNamed(
-            AppRoutes.mainCategory,
+          Get.defaultDialog(
+            middleText: "Please sign in  frist!",
+            confirm: CustomElevatedButton(
+              width: 100,
+              height: 48,
+              onPressed: () {},
+              text: "LOGIN",
+            ),
+            cancel: CustomElevatedButton(
+              width: 100,
+              height: 48,
+              onPressed: () {},
+              text: "Cancel",
+            ),
           );
+          // Get.offAndToNamed(
+          //   AppRoutes.mainCategory,
+          // );
         }
         break;
       case 3:
         {
-          Get.offAndToNamed(
-            AppRoutes.catalog,
+          Get.defaultDialog(
+            middleText: "Please sign in  frist!",
+            confirm: CustomElevatedButton(
+              width: 100,
+              height: 48,
+              onPressed: () {},
+              text: "LOGIN",
+            ),
+            cancel: CustomElevatedButton(
+              width: 100,
+              height: 48,
+              onPressed: () {},
+              text: "Cancel",
+            ),
           );
+          // Get.offAndToNamed(
+          //   AppRoutes.catalog,
+          // );
         }
         break;
       case 4:

@@ -130,12 +130,13 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
             ),
           ),
          SizedBox(
-           height: Get.height*0.7 ,
+           height: Get.height*0.69 ,
+
            child: ListView.builder(
              itemCount: 10,
                itemBuilder: (BuildContext context, int index){
                  return OrderCell(orderNo: '1947034',totalAmountOfMoney: "112",itemCounter: "3", date: '18-11-2022', cancelled: selectedIndex == 2?true:false,delivered: selectedIndex == 0?true:false,);
-               }),
+               },),
          )
         ],
       ),

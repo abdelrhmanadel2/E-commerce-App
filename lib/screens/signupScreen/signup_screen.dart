@@ -1,3 +1,5 @@
+import 'package:ecommerce_app/screens/home/home_screen.dart';
+import 'package:ecommerce_app/screens/home_page.dart';
 import 'package:ecommerce_app/screens/loginScreen/login_screen.dart';
 import 'package:ecommerce_app/screens/signupScreen/signup_controller.dart';
 import 'package:ecommerce_app/utils/colors.dart';
@@ -15,17 +17,43 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
-        appBar: const AppBarWidget(),
         body: GetBuilder<SignupController>(
             init: SignupController(),
             builder: (controller) => SingleChildScrollView(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 70),
                     child: Form(
                       key: controller.formKey,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              InkWell(
+                                  onTap: () {
+                                    Get.to(homeScreen());
+                                  },
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text("Skip"),
+                                      SizedBox(width: 4.w),
+                                      Icon(
+                                        Get.find<LocalizationService>()
+                                                    .activeLocale ==
+                                                Locale("en")
+                                            ? Icons.arrow_right_alt_rounded
+                                            : Icons.keyboard_arrow_left_rounded,
+                                        color: theme.colorScheme.secondary,
+                                      ),
+                                    ],
+                                  )),
+                            ],
+                          ),
+                          SizedBox(height: 25.h),
+
                           const SizedBox(
                             height: 18,
                           ),
@@ -127,7 +155,9 @@ class SignupScreen extends StatelessWidget {
                             child: CustomElevatedButton(
                                 width: 343,
                                 height: 48,
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.to(() => homeScreen());
+                                },
                                 text: "SIGN UP"),
                           ),
                           SizedBox(height: 126.r),
@@ -149,7 +179,9 @@ class SignupScreen extends StatelessWidget {
                                       height: 64.0.r,
                                       width: 92.0.r,
                                       background: Colors.white,
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        // controller.signinGoogle();
+                                      },
                                     ),
                                     SizedBox(
                                       width: 16.w,

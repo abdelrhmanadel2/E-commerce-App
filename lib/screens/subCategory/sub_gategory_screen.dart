@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SubCategory extends StatelessWidget {
-   SubCategory({Key? key, this.initialIndex}) : super(key: key);
+  SubCategory({Key? key, this.initialIndex}) : super(key: key);
   final initialIndex;
   @override
   Widget build(BuildContext context) {
@@ -20,14 +20,16 @@ class SubCategory extends StatelessWidget {
       initialIndex: initialIndex,
       length: 3,
       child: Scaffold(
-        bottomNavigationBar: BottomNavBar(index: 1,),
+        bottomNavigationBar: BottomNavBar(
+          index: 1,
+        ),
         appBar: AppBarWidget(
           hasBackButton: true,
           tabBar: true,
           actions: [
             IconButton(
                 onPressed: Get.find<ThemeService>().switchTheme,
-                icon:  Icon(
+                icon: Icon(
                   Icons.zoom_out_sharp,
                   color: theme.colorScheme.onBackground,
                 ))
@@ -47,17 +49,20 @@ class SubCategory extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 8, vertical: 8),
                         child: GestureDetector(
-                          onTap: (){
-                            Get.to(() => CatalogScreen(
-                              title: "Summer Sales",
-                            ),  );
+                          onTap: () {
+                            Get.to(
+                              () => CatalogScreen(
+                                title: "Summer Sales",
+                              ),
+                            );
                           },
                           child: Container(
                             height: 100,
                             width: Get.width * 0.88,
                             decoration: const BoxDecoration(
                               color: kPrimaryColor,
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -81,62 +86,60 @@ class SubCategory extends StatelessWidget {
                         ),
                       ),
                       CategoryCell(
-                        title: 'New Collection',
+                        title: 'Clothes',
                         onPressed: () {
-
-                          Get.to(() => CatalogScreen(
-                                title: "New Collection",
-                              ));
+                          Get.to(
+                            () => CatalogScreen(
+                              title: "Clothes",
+                              mainCategory: "Ladies",
+                              subCategory: "clothes",
+                            ),
+                          );
                         },
                         imagePath: 'assets/images/womens-new-collection.jpg',
                       ),
                       CategoryCell(
                         title: 'T-Shirt',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "T-Shirt",
-                          ));
+                                title: "T-Shirt",
+                              ));
                         },
                         imagePath: 'assets/images/womens-tshirt.jpg',
                       ),
                       CategoryCell(
                         title: 'jackets',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "jackets",
-                          ));
+                                title: "jackets",
+                              ));
                         },
                         imagePath: 'assets/images/womens-jackets.jpg',
                       ),
                       CategoryCell(
                         title: 'Shirts',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "Shirts",
-                          ));
+                                title: "Shirts",
+                              ));
                         },
                         imagePath: 'assets/images/womens-shirts.jpeg',
                       ),
                       CategoryCell(
                         title: 'Trousers',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "Trousers",
-                          ));
+                                title: "Trousers",
+                              ));
                         },
                         imagePath: 'assets/images/womens-trousers.jpeg',
                       ),
                       CategoryCell(
                         title: 'Accessories',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "Accessories",
-                          ));
+                                title: "Accessories",
+                              ));
                         },
                         imagePath: 'assets/images/women-accessories.jpg',
                       ),
@@ -156,7 +159,7 @@ class SubCategory extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 8, vertical: 8),
                         child: GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             print("hii");
                           },
                           child: Container(
@@ -164,7 +167,8 @@ class SubCategory extends StatelessWidget {
                             width: Get.width * 0.88,
                             decoration: const BoxDecoration(
                               color: kPrimaryColor,
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -188,62 +192,60 @@ class SubCategory extends StatelessWidget {
                         ),
                       ),
                       CategoryCell(
-                        title: 'New Collection',
+                        title: 'Clothes',
                         onPressed: () {
-
-                          Get.to(() => CatalogScreen(
-                                title: "New Collection",
-                              ));
+                          Get.to(
+                            () => CatalogScreen(
+                              title: "Clothes",
+                              mainCategory: "Men",
+                              subCategory: "clothes",
+                            ),
+                          );
                         },
                         imagePath: 'assets/images/mens-new-collections.jpg',
                       ),
                       CategoryCell(
                         title: 'T-Shirt',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "T-Shirt",
-                          ));
+                                title: "T-Shirt",
+                              ));
                         },
                         imagePath: 'assets/images/mens-tshirt.jpg',
                       ),
                       CategoryCell(
                         title: 'jackets',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "jackets",
-                          ));
+                                title: "jackets",
+                              ));
                         },
                         imagePath: 'assets/images/mens-jackets.jpg',
                       ),
                       CategoryCell(
                         title: 'Shirts',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "Shirts",
-                          ));
+                                title: "Shirts",
+                              ));
                         },
                         imagePath: 'assets/images/mens-shirt.jpg',
                       ),
                       CategoryCell(
                         title: 'Trousers',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "Trousers",
-                          ));
+                                title: "Trousers",
+                              ));
                         },
                         imagePath: 'assets/images/mens-trousers.jpg',
                       ),
                       CategoryCell(
                         title: 'Accessories',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "Accessories",
-                          ));
+                                title: "Accessories",
+                              ));
                         },
                         imagePath: 'assets/images/Men-accessories.jpg',
                       ),
@@ -263,7 +265,7 @@ class SubCategory extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 8, vertical: 8),
                         child: GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             print("hii");
                           },
                           child: Container(
@@ -271,7 +273,8 @@ class SubCategory extends StatelessWidget {
                             width: Get.width * 0.88,
                             decoration: const BoxDecoration(
                               color: kPrimaryColor,
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -295,62 +298,61 @@ class SubCategory extends StatelessWidget {
                         ),
                       ),
                       CategoryCell(
-                        title: 'New Collection',
+                        title: 'Clothes',
                         onPressed: () {
-
-                          Get.to(() => CatalogScreen(
-                            title: "New Collection",
-                          ));
+                          Get.to(
+                            () => CatalogScreen(
+                              title: "Clothes",
+                              mainCategory: "Kids",
+                              subCategory: "clothes",
+                            ),
+                          );
                         },
                         imagePath: 'assets/images/kids-new-collection.jpg',
                       ),
                       CategoryCell(
                         title: 'T-Shirt',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "T-Shirt",
-                          ));
+                                title: "T-Shirt",
+                              ));
                         },
-                        imagePath: 'assets/images/Boy-Wearing-T-Shirt-Mockup.jpg',
+                        imagePath:
+                            'assets/images/Boy-Wearing-T-Shirt-Mockup.jpg',
                       ),
                       CategoryCell(
                         title: 'jackets',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "jackets",
-                          ));
+                                title: "jackets",
+                              ));
                         },
                         imagePath: 'assets/images/kids-jackets.jpeg',
                       ),
                       CategoryCell(
                         title: 'Shirts',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "Shirts",
-                          ));
+                                title: "Shirts",
+                              ));
                         },
                         imagePath: 'assets/images/kids-shirt.jpg',
                       ),
                       CategoryCell(
                         title: 'Trousers',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "Trousers",
-                          ));
+                                title: "Trousers",
+                              ));
                         },
                         imagePath: 'assets/images/kids-trousers.jpg',
                       ),
                       CategoryCell(
                         title: 'New born',
                         onPressed: () {
-
                           Get.to(() => CatalogScreen(
-                            title: "New born",
-                          ));
+                                title: "New born",
+                              ));
                         },
                         imagePath: 'assets/images/kid-newborn.jpg',
                       ),
@@ -359,7 +361,6 @@ class SubCategory extends StatelessWidget {
                 ),
               ),
             ),
-
           ],
         ),
       ),

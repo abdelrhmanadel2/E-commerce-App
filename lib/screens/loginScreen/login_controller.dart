@@ -1,7 +1,9 @@
 import 'package:ecommerce_app/screens/signupScreen/signup_helper.dart';
 import 'package:ecommerce_app/utils/translation_key.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 const wrongCode = 'assets/images/wrong_code.png';
 

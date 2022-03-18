@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/models/product_model.dart';
+import 'package:ecommerce_app/models/sale_product_model.dart';
 import 'package:ecommerce_app/screens/catalog/catalog_controller.dart';
 import 'package:ecommerce_app/widgets/app_bar.dart';
 import 'package:ecommerce_app/widgets/row_product_card.dart';
@@ -9,8 +9,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class CatalogScreen extends StatelessWidget {
-  CatalogScreen({Key? key, this.title = ""}) : super(key: key);
+  CatalogScreen({Key? key, this.title = "",this.mainCategory,this.subCategory}) : super(key: key);
   String title;
+  String? mainCategory;
+  String? subCategory;
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -28,6 +30,7 @@ class CatalogScreen extends StatelessWidget {
         body: GetBuilder<CatalogController>(
             init: CatalogController(),
             builder: (controller) {
+              controller.feachProducts(mainCategory,subCategory);
               return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -67,7 +70,10 @@ class CatalogScreen extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
-                                    onPressed: () {}),
+                                    onPressed: () {
+                                      
+
+                                    }),
                               ),
                               scrollDirection: Axis.horizontal,
                               itemCount: 10,
@@ -147,7 +153,7 @@ class CatalogScreen extends StatelessWidget {
                                 crossAxisCount: 2,
                                 itemCount: controller.productList.length,
                                 itemBuilder: (context, int index) {
-                                  ProductModel product =
+                                  SaleProductModel product =
                                       controller.productList[index];
 
                                   return RowProductCard(

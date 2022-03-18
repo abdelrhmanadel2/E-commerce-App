@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/services.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -136,7 +137,9 @@ class LoginScreen extends StatelessWidget {
                                       height: 64.0.r,
                                       width: 92.0.r,
                                       background: Colors.white,
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        GoogleSignIn().signIn();
+                                      },
                                     ),
                                     SizedBox(
                                       width: 16.w,

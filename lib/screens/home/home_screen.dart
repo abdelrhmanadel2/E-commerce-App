@@ -188,17 +188,9 @@ class _homeScreenState extends State<homeScreen> {
                                         itemBuilder:
                                             (BuildContext context, int index) {
                                           return ItemCell(
-                                            addToFavorite: () {
-                                              Get.find<LocalizationService>()
-                                                  .toggleLocale();
-                                            },
-                                            hasDiscount: controller.menProductList[index].sale,
-                                            title: controller.menProductList[index].name,
-                                            rating: double.parse(controller.menProductList[index].rating.rate.numberDouble),
-                                            storeName: controller.menProductList[index].categories[0],
-                                            totalRating: controller.menProductList[index].rating.count.numberInt,
-                                            price: "\$${controller.menProductList[index].price.value.numberDouble}",
-                                            imagePath: controller.menProductList[index].images[0].url,
+                                          
+                                            product: controller.menProductList[index],
+                                         
                                           );
                                         },
                                       )) ,
@@ -289,16 +281,9 @@ class _homeScreenState extends State<homeScreen> {
                                         itemBuilder:
                                             (BuildContext context, int index) {
                                           return ItemCell(
-                                            addToFavorite: () {
-                                              print("hii");
-                                            },
-                                            hasDiscount: controller.womenProductList[index].sale,
-                                            title: controller.womenProductList[index].name,
-                                            rating: double.parse(controller.womenProductList[index].rating.rate.numberDouble),
-                                            storeName: controller.womenProductList[index].categories[0],
-                                            totalRating: controller.womenProductList[index].rating.count.numberInt,
-                                            price: "\$${controller.womenProductList[index].price.value.numberDouble}",
-                                            imagePath: controller.womenProductList[index].images[0].url,
+                                         
+                                            product: controller.womenProductList[index],
+                                           
                                           );
                                         },
                                       )),
@@ -389,16 +374,9 @@ class _homeScreenState extends State<homeScreen> {
                                         itemBuilder:
                                             (BuildContext context, int index) {
                                           return ItemCell(
-                                            addToFavorite: () {
-                                              print("hii");
-                                            },
-                                            hasDiscount: controller.kidProductList[index].sale,
-                                            title: controller.kidProductList[index].name,
-                                            rating: double.parse(controller.kidProductList[index].rating.rate.numberDouble),
-                                            storeName: controller.kidProductList[index].categories[0],
-                                            totalRating: controller.kidProductList[index].rating.count.numberInt,
-                                            price: "\$${controller.kidProductList[index].price.value.numberDouble}",
-                                            imagePath: controller.kidProductList[index].images[0].url,
+                                           
+                                            product: controller.kidProductList[index],
+                                        
                                           );
                                         },
                                       )) ,

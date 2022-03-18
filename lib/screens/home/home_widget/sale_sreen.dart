@@ -152,19 +152,9 @@ class _SaleScreenState
                                         itemBuilder:
                                             (BuildContext context, int index) {
                                           return ItemCell(
-                                            addToFavorite: () {
-                                              Get.find<LocalizationService>()
-                                                  .toggleLocale();
-                                            },
-                                            hasDiscount: controller.menSaleProductList[index].sale,
-                                            title: controller.menSaleProductList[index].name,
-                                            discountPrecentage: "50%",
-                                            rating: double.parse(controller.menSaleProductList[index].rating.rate.numberDouble),
-                                            storeName: controller.menSaleProductList[index].categories[0],
-                                            totalRating: controller.menSaleProductList[index].rating.count.numberInt,
-                                            priceBefore: "\$${controller.menSaleProductList[index].price.value.numberDouble}",
-                                            priceAfter: "\$${controller.menSaleProductList[index].whitePrice.value.numberDouble}",
-                                            imagePath: controller.menSaleProductList[index].images[0].url,
+                                           
+                                            product: controller.menSaleProductList[index],
+                                    
                                           );
                                         },
                                       )) ,
@@ -255,18 +245,8 @@ class _SaleScreenState
                                           itemBuilder:
                                               (BuildContext context, int index) {
                                             return ItemCell(
-                                              addToFavorite: () {
-                                                print("hii");
-                                              },
-                                              hasDiscount: controller.womenSaleProductList[index].sale,
-                                              title: controller.womenSaleProductList[index].name,
-                                              rating: double.parse(controller.womenSaleProductList[index].rating.rate.numberDouble),
-                                              storeName: controller.womenSaleProductList[index].categories[0],
-                                              discountPrecentage: "50%",
-                                              totalRating: controller.womenSaleProductList[index].rating.count.numberInt,
-                                              priceBefore: "\$${controller.womenSaleProductList[index].price.value.numberDouble}",
-                                              priceAfter: "\$${controller.womenSaleProductList[index].whitePrice.value.numberDouble}",
-                                              imagePath:controller.womenSaleProductList[index].images[0].url,
+                                            
+                                              product: controller.womenSaleProductList[index],
                                             );
                                           },
                                         )),
@@ -356,19 +336,9 @@ class _SaleScreenState
                                           itemBuilder:
                                               (BuildContext context, int index) {
                                             return ItemCell(
-                                              addToFavorite: () {
-                                                print("hii");
-                                              },
-                                              hasDiscount: controller.kidSaleProductList[index].sale,
-                                              title: controller.kidSaleProductList[index].name,
-                                              discountPrecentage: "50%",
-                                              rating: double.parse(controller.kidSaleProductList[index].rating.rate.numberDouble),
-                                              storeName: controller.kidSaleProductList[index].categories[0],
-                                              totalRating: controller.kidSaleProductList[index].rating.count.numberInt,
-                                              priceBefore: "\$${controller.kidSaleProductList[index].price.value.numberDouble}",
-                                              priceAfter: "\$${controller.kidSaleProductList[index].whitePrice.value.numberDouble}",
-                                              imagePath: controller.kidSaleProductList[index].images[0].url,
-                                            );
+                                             
+                                              product: controller.kidSaleProductList[index],
+                                          );
                                           },
                                         )) ,
                                 ],

@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:ecommerce_app/models/product_model.dart';
+import 'package:ecommerce_app/models/sale_product_model.dart';
 import 'package:ecommerce_app/utils/services/api_service.dart';
 import 'package:ecommerce_app/utils/services/services.dart';
 
@@ -8,11 +8,11 @@ import 'package:ecommerce_app/utils/services/services.dart';
 class CatalogService {
   static ApiService api = ApiService();
 
-  static Future<List<ProductModel>?> getCategories(
-      {maincategory, subCategory}) async {
+  static Future<List<SaleProductModel>?> getCategories(
+      {mainCategory, subCategory}) async {
     var queryParameters = {
-      "Secret": "01017018407",
-      "mainCategory": maincategory
+      "secret": "01017018407",
+      "mainCategory": mainCategory
     };
     if (subCategory != null) {
       queryParameters.addAll({"subCategory": subCategory});
@@ -20,11 +20,11 @@ class CatalogService {
     final data = await api.request(Services.getProductList, "GET",
         queryParamters: queryParameters);
     if (data != null) {
-      List<ProductModel> categories = [];
+      List<SaleProductModel> categories = [];
 
       print(data.length);
       data.forEach((element) {
-        categories.add(ProductModel.fromJson(element));
+        categories.add(SaleProductModel.fromJson(element));
       });
       return categories;
     }

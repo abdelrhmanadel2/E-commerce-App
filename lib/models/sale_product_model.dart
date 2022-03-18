@@ -46,7 +46,7 @@ class SaleProductModel {
   String code;
   String name;
   Price price;
-  List<Image> images;
+  List<Pic> images;
   List<String> categories;
   String pk;
   Price whitePrice;
@@ -78,7 +78,7 @@ class SaleProductModel {
     code: json["code"],
     name: json["name"],
     price: Price.fromJson(json["price"]),
-    images: List<Image>.from(json["images"].map((x) => Image.fromJson(x))),
+    images: List<Pic>.from(json["images"].map((x) => Pic.fromJson(x))),
     categories: List<String>.from(json["categories"].map((x) => x)),
     pk: json["pk"],
     whitePrice: Price.fromJson(json["whitePrice"]),
@@ -172,14 +172,14 @@ class Id {
   };
 }
 
-class Image {
-  Image({
+class Pic {
+  Pic({
    required this.url,
   });
 
   String url;
 
-  factory Image.fromJson(Map<String, dynamic> json) => Image(
+  factory Pic.fromJson(Map<String, dynamic> json) => Pic(
     url: json["url"] == null ? null : json["url"],
   );
 
@@ -246,15 +246,14 @@ class Value {
    required this.numberDouble,
   });
 
-  String numberDouble;
+  double numberDouble;
 
-  factory Value.fromJson(Map<String, dynamic> json) => Value(
-    numberDouble: json["\u0024numberDouble"] == null ? null : json["\u0024numberDouble"],
+  factory Value.fromJson(Map<dynamic, dynamic> json) => Value(
+    numberDouble: double.parse( json["\u0024numberDouble"]),
   );
 
-  Map<String, dynamic> toJson() => {
-    "\u0024numberDouble": numberDouble == null ? null : numberDouble,
-  };
+  Map<dynamic, dynamic> toJson() => {
+    "\u0024numberDouble": numberDouble   };
 }
 
 class Rating {
