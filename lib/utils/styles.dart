@@ -5,18 +5,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Styles {
   static final kTextStyleRegular = TextStyle(
-      fontSize: 16.sp,
-      fontFamily: kFontFamily,
-      color: kBackgroundColor,
-      fontWeight: FontWeight.normal);
+      fontSize: 16.sp, fontFamily: kFontFamily, fontWeight: FontWeight.normal);
   static final kTextStyleDescription = extend(
       kTextStyleRegular,
       TextStyle(
         fontSize: 14.sp,
       ));
+  static final kTextStyleSmallDescription = extend(
+      kTextStyleRegular,
+      TextStyle(
+        fontSize: 8.sp,
+      ));
   static final kTextStyleDescriptive = extend(
       kTextStyleDescription,
       TextStyle(
+        fontSize: 14.sp,
         fontWeight: FontWeight.w500,
       ));
   static final kTextStyleHelperText = extend(
@@ -31,9 +34,21 @@ class Styles {
         fontWeight: FontWeight.w700,
         fontSize: 34.sp,
       ));
-  static final kTextStyleSubheads = extend(
+  static final kTextStyleitemHeadline = extend(
       kTextStyleRegular,
       TextStyle(
+        fontWeight: FontWeight.w700,
+        fontSize: 16.sp,
+      ));
+  static final kTextStyleMassiveHeadline = extend(
+      kTextStyleRegular,
+      TextStyle(
+        fontWeight: FontWeight.w700,
+        fontSize: 48.sp,
+      ));
+  static final kTextStyleSubheads = extend(
+      kTextStyleRegular,
+      const TextStyle(
         fontWeight: FontWeight.w600,
       ));
   static final kTextStyleHeadline2 = extend(
@@ -46,4 +61,16 @@ class Styles {
       TextStyle(
         fontSize: 18.sp,
       ));
+
+  static final TextTheme textTheme = TextTheme(
+    headline1: kTextStyleHeadline,
+    headline2: kTextStyleHeadline2,
+    headline6: kTextStyleHeadline3,
+    subtitle1: kTextStyleSubheads,
+    button: kTextStyleDescriptive,
+    caption: kTextStyleHelperText,
+    overline: kTextStyleHelperText,
+    bodyText1: kTextStyleRegular,
+    bodyText2: kTextStyleDescription,
+  );
 }
